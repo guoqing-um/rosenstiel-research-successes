@@ -1,0 +1,1464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Making Waves — Rosenstiel School Highlights — July 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f8f4ec;            /* warm cream */
+    --paper: #ffffff;
+    --paper-2: #fbf6ec;
+    --ink: #2c3e4a;           /* softer warm-navy */
+    --ink-soft: #4a5560;
+    --muted: #76726a;         /* warm muted */
+    --muted-2: #a5a098;
+    --rule: #ebe2cc;
+    --rule-soft: #f2ead8;
+    /* 5 Rosenstiel departments — lighter, warmer pastels */
+    --dept-atm: #a78bd0;      /* Atmospheric Sciences — light purple */
+    --dept-evr: #9bb56a;      /* Environmental Science & Policy — warm green */
+    --dept-mbe: #e8906f;      /* Marine Biology & Ecology — warm coral */
+    --dept-mgs: #d4a955;      /* Marine Geosciences — soft gold/amber */
+    --dept-oce: #7eb0bd;      /* Ocean Sciences — dusty teal */
+    --dept-cross: #a09a8a;    /* genuinely cross-departmental — warm gray */
+    /* tinted backgrounds — even softer than dept colors */
+    --tint-atm: #efe6f7;
+    --tint-evr: #f0f5dd;
+    --tint-mbe: #fce4d6;
+    --tint-mgs: #f7ecc8;
+    --tint-oce: #e2eef1;
+    --gold: #c89c4a;
+    --chip: #f0e9d8;
+    --shadow: 0 1px 2px rgba(44,62,74,.04), 0 6px 18px rgba(44,62,74,.05);
+    --shadow-lg: 0 2px 4px rgba(44,62,74,.05), 0 14px 36px rgba(44,62,74,.07);
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    margin: 0;
+    font-family: "Source Serif 4", "Source Serif Pro", Georgia, "Iowan Old Style", serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .sans { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+  .page {
+    max-width: 1180px;
+    margin: 32px auto;
+    padding: 0 28px 80px;
+  }
+
+  /* ====== Masthead ====== */
+  .masthead {
+    border-top: 4px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+  }
+  .masthead .left .school {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
+  .masthead .left .title-row {
+    display: flex; align-items: flex-end; gap: 14px;
+  }
+  .masthead .left h1 {
+    font-family: "DM Serif Display", "Playfair Display", Georgia, serif;
+    font-size: 84px;
+    line-height: 0.95;
+    margin: 0;
+    letter-spacing: -1.5px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .masthead .left h1 em {
+    font-style: italic;
+    color: var(--ink);
+  }
+  .masthead .left h1 small {
+    display: block;
+    font-size: 19px;
+    color: var(--muted);
+    font-weight: 400;
+    font-family: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+    font-style: italic;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-top: 14px;
+    line-height: 1.35;
+    max-width: 540px;
+  }
+  .masthead .right .inaugural {
+    color: var(--dept-oce);
+    font-style: italic;
+    font-family: "Source Serif Pro", Georgia, serif;
+    font-size: 13px;
+    margin: 2px 0 4px;
+  }
+  .masthead .right {
+    text-align: right;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .masthead .right .vol {
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 1px;
+  }
+
+  /* discipline ribbon — stacked: name on top, acronym below */
+  .ribbon {
+    display: flex;
+    margin-top: -1px;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .ribbon .seg {
+    flex: 1;
+    text-align: center;
+    padding: 10px 6px 8px;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border-right: 1px solid rgba(255,255,255,.6);
+  }
+  .ribbon .seg:last-child { border-right: none; }
+  .ribbon .seg .name {
+    font-size: 10.5px;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+  .ribbon .seg .code {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+  }
+  .ribbon .r-atm { background: var(--tint-atm); }
+  .ribbon .r-atm .code { color: var(--dept-atm); }
+  .ribbon .r-evr { background: var(--tint-evr); }
+  .ribbon .r-evr .code { color: #6f9038; }
+  .ribbon .r-mbe { background: var(--tint-mbe); }
+  .ribbon .r-mbe .code { color: #c66a47; }
+  .ribbon .r-mgs { background: var(--tint-mgs); }
+  .ribbon .r-mgs .code { color: #9a7a26; }
+  .ribbon .r-oce { background: var(--tint-oce); }
+  .ribbon .r-oce .code { color: #5a96a4; }
+
+  .subbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 22px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .subbar .crumbs span + span::before { content: "  •  "; color: var(--rule); }
+
+  /* ====== Editors' note (inaugural-issue only) ====== */
+  .editors-note {
+    margin-top: 22px;
+    padding: 18px 22px;
+    border-left: 4px solid var(--gold);
+    background: var(--paper);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 14.5px;
+    color: var(--ink);
+    box-shadow: var(--shadow);
+  }
+  .editors-note strong { font-family: "Playfair Display", Georgia, serif; font-weight: 700; font-size: 16px; }
+  .editors-note em { font-style: italic; }
+
+  /* ====== Layout helpers ====== */
+  .grid { display: grid; gap: 22px; }
+  .g-2 { grid-template-columns: repeat(2, 1fr); }
+  .g-3 { grid-template-columns: repeat(3, 1fr); }
+  .g-4 { grid-template-columns: repeat(4, 1fr); }
+  .g-5 { grid-template-columns: repeat(5, 1fr); }
+  @media (max-width: 900px) {
+    .g-2, .g-3, .g-4, .g-5 { grid-template-columns: 1fr; }
+  }
+
+  section { margin-top: 42px; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .section-head::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -1px;
+    width: 56px; height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+  }
+  .section-head h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: -0.6px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .section-head .tag {
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
+
+  /* ====== Cards ====== */
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .card .meta {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px;
+    margin: 0 0 10px;
+    line-height: 1.22;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .card p { margin: 0 0 8px; font-size: 16px; }
+  .card .byline { color: var(--muted); font-size: 13.5px; }
+
+  /* ====== Hero cards (digital-magazine style) ====== */
+  .hero-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media (max-width: 1100px) {
+    .hero-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .hero-grid { grid-template-columns: 1fr; }
+  }
+  .hero-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-card .h-band {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    font-family: "Inter", -apple-system, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    border-bottom: 2px solid;
+    min-height: 44px;
+  }
+  .hero-card .h-band .h-meta { font-weight: 700; line-height: 1.25; }
+  .hero-card .h-band .h-num {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0;
+    font-style: italic;
+    opacity: .7;
+    text-transform: none;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .hero-card .h-body {
+    padding: 16px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-card .h-body h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0 0 10px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .hero-card .h-body p {
+    font-size: 14.5px;
+    margin: 0 0 14px;
+    flex: 1;
+    line-height: 1.5;
+  }
+  .hero-card .h-body .byline {
+    color: var(--muted);
+    font-size: 12.5px;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 10px;
+    letter-spacing: .2px;
+  }
+  .hero-card.h-atm .h-band { background: var(--tint-atm); border-color: var(--dept-atm); }
+  .hero-card.h-evr .h-band { background: var(--tint-evr); border-color: var(--dept-evr); }
+  .hero-card.h-mbe .h-band { background: var(--tint-mbe); border-color: var(--dept-mbe); }
+  .hero-card.h-mgs .h-band { background: var(--tint-mgs); border-color: var(--dept-mgs); }
+  .hero-card.h-oce .h-band { background: var(--tint-oce); border-color: var(--dept-oce); }
+
+  /* department pill — tinted bg with deeper dept-color text */
+  .pill {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 999px;
+    vertical-align: middle; margin-left: 6px;
+    font-weight: 700;
+  }
+  .pill.atm   { background: var(--tint-atm); color: #7a5fb0; }
+  .pill.evr   { background: var(--tint-evr); color: #6f9038; }
+  .pill.mbe   { background: var(--tint-mbe); color: #c66a47; }
+  .pill.mgs   { background: var(--tint-mgs); color: #9a7a26; }
+  .pill.oce   { background: var(--tint-oce); color: #5a96a4; }
+  .pill.cross { background: #f0ece4; color: var(--ink); }
+
+  /* ====== By the numbers ====== */
+  .stat {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 18px 20px;
+    text-align: left;
+  }
+  .stat .num {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+  .stat .num .unit { font-size: 20px; color: var(--muted); margin-left: 4px; font-weight: 500; }
+  .stat .label {
+    margin-top: 8px;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+  }
+  .stat .delta {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #6f9038;
+  }
+  .stat .delta.neg { color: #a05c2a; }
+
+  /* ====== Tables ====== */
+  table.win {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  table.win th, table.win td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+  }
+  table.win th {
+    background: var(--paper-2);
+    font-family: "Inter", sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--rule);
+  }
+  table.win tbody tr { transition: background .15s ease; }
+  table.win tbody tr:hover { background: var(--paper-2); }
+  table.win tr:last-child td { border-bottom: none; }
+  table.win tfoot td {
+    background: var(--paper-2);
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    border-top: 1px solid var(--rule);
+    border-bottom: none;
+  }
+  table.win .amt {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    text-align: right;
+    min-width: 130px;
+  }
+  table.win .amt .amt-val {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  table.win .amt .amt-bar {
+    height: 3px;
+    background: var(--rule-soft);
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+  }
+  table.win .amt .amt-bar > i {
+    display: block;
+    height: 100%;
+    border-radius: 2px;
+  }
+  table.win .agency {
+    display: inline-block;
+    background: var(--chip);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 1px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ====== Grant cards ====== */
+  .grant-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 18px 18px 16px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .grant-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .grant-card .g-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .grant-card .g-term {
+    font-family: "Inter", sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .grant-card .g-amt {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    font-variant-numeric: tabular-nums;
+  }
+  .grant-card .g-bar {
+    height: 3px;
+    background: var(--rule-soft);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 8px 0 14px;
+  }
+  .grant-card .g-bar > i { display: block; height: 100%; border-radius: 2px; }
+  .grant-card .g-project {
+    font-family: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+    font-size: 14.5px;
+    line-height: 1.35;
+    margin: 0 0 10px;
+    font-weight: 500;
+    color: var(--ink);
+    flex: 1;
+  }
+  .grant-card .g-pi {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.2px;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 10px;
+  }
+  .grant-card .g-pi strong { color: var(--ink); font-weight: 600; }
+
+  /* ====== Field (campaign) cards ====== */
+  .field-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 16px 18px 14px;
+    box-shadow: var(--shadow);
+    border-top: 3px solid;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .field-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .field-card .fc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .field-card .fc-loc {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin: 0;
+  }
+  .field-card .fc-loc em { font-style: italic; }
+  .field-card .fc-desc {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0 0 12px;
+    color: var(--ink);
+    flex: 1;
+  }
+  .field-card .fc-lead {
+    font-family: "Inter", sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-style: normal;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  /* ====== Talk/outreach mini-cards ====== */
+  .talk-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    border-left: 3px solid var(--ink);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .talk-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .talk-card.tc-media { border-left-color: var(--gold); }
+  .talk-card .tc-date {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .talk-card .tc-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  .talk-card .tc-venue {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .talk-subhead {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+
+  /* ====== Chart card ====== */
+  .chart-card .donut-wrap {
+    position: relative;
+    margin: 6px 0 4px;
+  }
+  .chart-card .donut-total {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+  }
+  .chart-card .donut-total .big {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 30px;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+  }
+  .chart-card .donut-total .small {
+    font-family: "Inter", sans-serif;
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ====== Awards row ====== */
+  .award {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 16px 18px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .award .medal {
+    width: 38px; height: 38px; flex: 0 0 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f3d27a, #b8860b);
+    display: grid; place-items: center;
+    color: #fff; font-weight: 700;
+    font-family: "Inter", sans-serif;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,.15);
+  }
+  .award .who { font-weight: 600; }
+  .award .what { color: var(--muted); font-size: 13px; }
+
+  /* ====== Publications ====== */
+  .pub {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .pub .journal {
+    font-family: "Inter", sans-serif;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .pub h4 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 19px;
+    margin: 6px 0 8px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .pub .authors { color: var(--muted); font-size: 14px; }
+  .pub .doi { color: var(--muted); font-size: 12px; margin-top: 6px; font-family: "JetBrains Mono", monospace; }
+  .pub .badge {
+    display: inline-block;
+    margin-left: 6px;
+    background: var(--ink-soft); color: white;
+    font-size: 10px; padding: 2px 7px; border-radius: 3px;
+    font-family: "Inter", sans-serif; letter-spacing: 1px;
+    text-transform: uppercase; vertical-align: middle;
+    font-weight: 600;
+  }
+  .pub .badge.gold { background: var(--gold); }
+  .pub .badge.green { background: #6f9038; }
+
+  /* ====== Field map ====== */
+  .field-wrap {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 18px;
+  }
+  .field-wrap svg { width: 100%; height: auto; display: block; }
+  .field-list { font-size: 14px; }
+  .field-list li { margin-bottom: 10px; }
+  .field-list .pin {
+    display: inline-block; width: 10px; height: 10px;
+    border-radius: 50%; margin-right: 8px; vertical-align: middle;
+  }
+
+  /* ====== Spotlights ====== */
+  .spotlight {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 18px 20px;
+    display: flex; gap: 16px;
+  }
+  .spotlight .avatar {
+    width: 56px; height: 56px; flex: 0 0 56px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 18px;
+    font-family: "Inter", sans-serif;
+    border: 2px solid;
+    letter-spacing: 0.5px;
+  }
+  .spotlight .a-atm   { background: var(--tint-atm); border-color: var(--dept-atm); color: #7a5fb0; }
+  .spotlight .a-evr   { background: var(--tint-evr); border-color: var(--dept-evr); color: #6f9038; }
+  .spotlight .a-mbe   { background: var(--tint-mbe); border-color: var(--dept-mbe); color: #c66a47; }
+  .spotlight .a-mgs   { background: var(--tint-mgs); border-color: var(--dept-mgs); color: #9a7a26; }
+  .spotlight .a-oce   { background: var(--tint-oce); border-color: var(--dept-oce); color: #5a96a4; }
+  .spotlight .a-cross { background: #f0ece4; border-color: var(--dept-cross); color: var(--ink); }
+  .spotlight h4 { margin: 0 0 6px; font-family: "Playfair Display", Georgia, serif; font-size: 20px; font-weight: 600; color: var(--ink); }
+  .spotlight .role { color: var(--muted); font-size: 13.5px; margin-bottom: 8px; }
+  .spotlight p { font-size: 15px; line-height: 1.5; margin: 0; }
+
+  /* ====== Talks list ====== */
+  .talks { font-size: 14px; }
+  .talk { padding: 10px 0; border-bottom: 1px dashed var(--rule); }
+  .talk:last-child { border-bottom: none; }
+  .talk .date { color: var(--muted); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+  .talk .title { font-weight: 600; }
+  .talk .venue { color: var(--muted); }
+
+  /* ====== Pull quote ====== */
+  .quote {
+    background: var(--paper-2);
+    color: var(--ink);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--gold);
+    padding: 28px 36px;
+    position: relative;
+    box-shadow: var(--shadow);
+  }
+  .quote .q {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px; line-height: 1.4;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .quote .src {
+    margin-top: 12px;
+    font-family: "Inter", sans-serif;
+    color: var(--muted); font-size: 12px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ====== Footer ====== */
+  footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    position: relative;
+  }
+  footer::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: 0;
+    width: 64px; height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+  }
+  footer .f-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  footer .f-title {
+    font-family: "DM Serif Display", "Playfair Display", Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  footer .f-title em { font-style: italic; }
+  footer .f-sub {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+  footer .f-depts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 18px;
+  }
+  footer .f-dept {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    font-family: "Inter", sans-serif;
+    font-size: 11.5px;
+    color: var(--ink);
+    letter-spacing: 0.3px;
+  }
+  footer .f-dept::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  footer .f-dept.atm::before { background: var(--dept-atm); }
+  footer .f-dept.evr::before { background: var(--dept-evr); }
+  footer .f-dept.mbe::before { background: var(--dept-mbe); }
+  footer .f-dept.mgs::before { background: var(--dept-mgs); }
+  footer .f-dept.oce::before { background: var(--dept-oce); }
+  footer .f-bot {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    color: var(--muted);
+    font-family: "Inter", sans-serif;
+    padding-top: 14px;
+    border-top: 1px dashed var(--rule);
+  }
+  footer .f-bot a, footer .f-bot .mono { color: var(--ink); }
+
+  /* ====== Print ====== */
+  @media print {
+    html, body { background: white; }
+    .page { margin: 0; padding: 0 16mm; max-width: none; }
+    .card, .stat, table.win, .pub, .award, .spotlight, .field-wrap { box-shadow: none; }
+    section { page-break-inside: avoid; }
+    .quote { background: #0f2e3d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .ribbon span, .pill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============== MASTHEAD ============== -->
+  <header class="masthead">
+    <div class="left">
+      <div class="school sans">Rosenstiel School of Marine, Atmospheric, and Earth Science · University of Miami</div>
+      <div class="title-row">
+        <h1>Making&nbsp;<em>Waves</em><small>Celebrating Rosenstiel research successes each month</small></h1>
+      </div>
+    </div>
+    <div class="right sans">
+      <div class="vol">Vol. I · No. 1</div>
+      <div>July 2026 in review</div>
+      <div>Published 15 August 2026</div>
+    </div>
+  </header>
+  <div class="ribbon sans">
+    <span class="seg r-atm"><span class="name">Atmospheric Sciences</span><span class="code">ATM</span></span>
+    <span class="seg r-evr"><span class="name">Environmental Science &amp; Policy</span><span class="code">EVR</span></span>
+    <span class="seg r-mbe"><span class="name">Marine Biology &amp; Ecology</span><span class="code">MBE</span></span>
+    <span class="seg r-mgs"><span class="name">Marine Geosciences</span><span class="code">MGS</span></span>
+    <span class="seg r-oce"><span class="name">Ocean Sciences</span><span class="code">OCE</span></span>
+  </div>
+
+  <div class="subbar sans">
+    <div class="crumbs">
+      <span>Faculty</span><span>Research Staff</span><span>Postdocs</span><span>Graduate Students</span><span>Undergraduates</span>
+    </div>
+    <div>Shared with the school &amp; broader community</div>
+  </div>
+
+
+  <!-- ============== BY THE NUMBERS ============== -->
+  <section>
+    <div class="section-head">
+      <h2>July, by the numbers</h2>
+      <span class="tag sans">A snapshot of the month</span>
+    </div>
+    <div class="grid g-5">
+      <div class="stat">
+        <div class="num">$5.41<span class="unit">M</span></div>
+        <div class="label">New funding awarded</div>
+        <div class="delta">▲ 42% vs. June</div>
+      </div>
+      <div class="stat">
+        <div class="num">21</div>
+        <div class="label">Peer-reviewed papers</div>
+        <div class="delta">▲ 7 new</div>
+      </div>
+      <div class="stat">
+        <div class="num">11</div>
+        <div class="label">Awards &amp; honors</div>
+        <div class="delta">incl. 3 student</div>
+      </div>
+      <div class="stat">
+        <div class="num">9</div>
+        <div class="label">Active campaigns</div>
+        <div class="delta">cruises, flights, field &amp; community</div>
+      </div>
+      <div class="stat">
+        <div class="num">26</div>
+        <div class="label">Talks &amp; outreach</div>
+        <div class="delta">4 in K-12 classrooms</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== HERO HIGHLIGHTS ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Top highlights</h2>
+      <span class="tag sans">Five headline wins · one per department</span>
+    </div>
+    <div class="grid hero-grid">
+      <article class="card hero-card h-mbe">
+        <div class="h-band">
+          <span class="h-meta">Coral resilience · MBE</span>
+          <span class="h-num">01</span>
+        </div>
+        <div class="h-body">
+          <h3>Heat-tolerant coral genotypes published in <em>Nature</em></h3>
+          <p>Delgado's Coral Resilience Lab identifies three Caribbean genotypes that survived the 2023–24 bleaching with intact symbiont function — 1,200 fragments now outplanted at three Keys reef sites.</p>
+          <div class="byline sans">Delgado et al., <em>Nature</em> 631, 188–194 (2026)</div>
+        </div>
+      </article>
+      <article class="card hero-card h-atm">
+        <div class="h-band">
+          <span class="h-meta">Hurricane forecasting · ATM</span>
+          <span class="h-num">02</span>
+        </div>
+        <div class="h-body">
+          <h3>ML rapid-intensification model goes operational at NHC</h3>
+          <p>Bhatt &amp; Morán's “SHIPS-ML+” cuts 24-hr RI false alarms by 31% in 2024–25 hindcasts. Now in operational test at the National Hurricane Center for the 2026 season.</p>
+          <div class="byline sans">NOAA JTTI · with NHC &amp; AOML</div>
+        </div>
+      </article>
+      <article class="card hero-card h-mgs">
+        <div class="h-band">
+          <span class="h-meta">NSF CAREER · MGS</span>
+          <span class="h-num">03</span>
+        </div>
+        <div class="h-body">
+          <h3>NSF CAREER award for slow-slip imaging in Cascadia</h3>
+          <p>Okonkwo's 5-year, $785K award funds high-resolution imaging of slow-slip events along the Cascadia margin and a new “Listening to the Earth” module for K-12 classrooms.</p>
+          <div class="byline sans">Solid Earth · NSF EAR-2614402</div>
+        </div>
+      </article>
+      <article class="card hero-card h-oce">
+        <div class="h-band">
+          <span class="h-meta">Ocean transport · OCE</span>
+          <span class="h-num">04</span>
+        </div>
+        <div class="h-body">
+          <h3>First 7-year cabled-array Florida Current record</h3>
+          <p>Karpov, Olsson &amp; the FC-Array team publish the longest continuous Florida Current transport record to date — revealing significant variability linked to AMOC.</p>
+          <div class="byline sans">Karpov et al., <em>L&amp;O</em> (2026)</div>
+        </div>
+      </article>
+      <article class="card hero-card h-evr">
+        <div class="h-band">
+          <span class="h-meta">Community resilience · EVR</span>
+          <span class="h-num">05</span>
+        </div>
+        <div class="h-body">
+          <h3>South Florida's largest community flood-sensor network goes live</h3>
+          <p>Reyes-Tobias &amp; Cortez deploy 28 low-cost sensors with neighborhood partners across Little Haiti, Liberty City, and Shorecrest — co-designed with frontline residents.</p>
+          <div class="byline sans">NOAA Sea Grant · <em>Env. Sci. &amp; Policy</em> (2026)</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============== PULL QUOTE ============== -->
+  <!-- PLACEHOLDER: Replace the text below with a real, attributed quote you have permission to use
+       (e.g., a sentence from the Dean, a partner agency lead, or a featured PI). Delete this whole
+       <section> if you do not have a quote ready. Do NOT publish the placeholder text. -->
+  <section>
+    <div class="quote">
+      <div class="q">[ Pull-quote placeholder — insert one or two sentences here from someone whose words you can attribute, e.g. the Dean, a featured PI, or a partner. ]</div>
+      <div class="src sans">— [ Name, Title · Source ]</div>
+    </div>
+  </section>
+
+  <!-- ============== GRANTS ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Grants &amp; new funding</h2>
+      <span class="tag sans">$4.15M across the top 5 new awards</span>
+    </div>
+    <div class="grid hero-grid">
+      <article class="grant-card" style="border-top-color:#5a96a4">
+        <div class="g-top">
+          <span class="agency">NOAA JTTI</span>
+          <span class="g-term">3 yr</span>
+        </div>
+        <div class="g-amt">$1,180,000</div>
+        <div class="g-bar"><i style="width:100%;background:#5a96a4"></i></div>
+        <p class="g-project">SHIPS-ML+: operational ML for hurricane rapid intensification</p>
+        <div class="g-pi"><strong>S. Bhatt</strong>, L. Morán</div>
+      </article>
+      <article class="grant-card" style="border-top-color:#5a96a4">
+        <div class="g-top">
+          <span class="agency">NOAA RESTORE</span>
+          <span class="g-term">4 yr</span>
+        </div>
+        <div class="g-amt">$925,400</div>
+        <div class="g-bar"><i style="width:78%;background:#5a96a4"></i></div>
+        <p class="g-project">Climate-resilient coral genotypes for Florida Keys restoration</p>
+        <div class="g-pi"><strong>M. Delgado</strong></div>
+      </article>
+      <article class="grant-card" style="border-top-color:#9a7a26">
+        <div class="g-top">
+          <span class="agency">NSF EAR</span>
+          <span class="g-term">5 yr</span>
+        </div>
+        <div class="g-amt">$785,000</div>
+        <div class="g-bar"><i style="width:67%;background:#9a7a26"></i></div>
+        <p class="g-project">CAREER: Imaging slow-slip in Cascadia with dense arrays</p>
+        <div class="g-pi"><strong>A. Okonkwo</strong></div>
+      </article>
+      <article class="grant-card" style="border-top-color:var(--ink)">
+        <div class="g-top">
+          <span class="agency">ONR</span>
+          <span class="g-term">3 yr</span>
+        </div>
+        <div class="g-amt">$642,750</div>
+        <div class="g-bar"><i style="width:55%;background:var(--ink)"></i></div>
+        <p class="g-project">Submesoscale air–sea fluxes in the Gulf Stream front</p>
+        <div class="g-pi"><strong>I. Karpov</strong></div>
+      </article>
+      <article class="grant-card" style="border-top-color:#9a7a26">
+        <div class="g-top">
+          <span class="agency">NSF EAR</span>
+          <span class="g-term">3 yr</span>
+        </div>
+        <div class="g-amt">$612,400</div>
+        <div class="g-bar"><i style="width:52%;background:#9a7a26"></i></div>
+        <p class="g-project">Joint seismic–MT inversion of mantle upwellings</p>
+        <div class="g-pi"><strong>L. Ramirez</strong>, H. Park</div>
+      </article>
+    </div>
+    <div class="card chart-card chart-card-wide" style="margin-top:18px">
+      <div class="grid" style="grid-template-columns: 1fr 1.4fr; gap: 24px; align-items:center;">
+        <div class="donut-wrap">
+          <canvas id="fundingChart" height="220"></canvas>
+          <div class="donut-total">
+            <div class="big">$4.15M</div>
+            <div class="small">Top 5 · July</div>
+          </div>
+        </div>
+        <div>
+          <div class="meta sans">Funding mix · This month</div>
+          <h3 style="margin: 4px 0 10px">Where the new dollars come from</h3>
+          <p style="margin:0">NOAA leads this month — first ≥$1M JTTI award to the school since 2022, and the first NOAA RESTORE award for the new Coral Resilience Lab. NSF EAR contributes through two MGS-led awards (Cascadia slow-slip imaging and joint seismic–MT inversion).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== AWARDS ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Honors</h2>
+      <span class="tag sans">Six headline awards across all five departments</span>
+    </div>
+    <div class="grid g-3">
+      <div class="award"><div class="medal">★</div><div><div class="who">Prof. Lucia Ramirez <span class="pill mgs">MGS</span></div><div class="what">Elected <strong>AGU Fellow</strong> for contributions to mantle imaging and mentorship.</div></div></div>
+      <div class="award"><div class="medal">★</div><div><div class="who">Prof. Sharan Bhatt <span class="pill atm">ATM</span></div><div class="what">Elected <strong>AMS Fellow</strong> for advances in tropical cyclone prediction.</div></div></div>
+      <div class="award"><div class="medal">★</div><div><div class="who">Prof. Maya Delgado <span class="pill mbe">MBE</span></div><div class="what"><strong>ASLO Yentsch–Schindler Early Career Award</strong> for coral assisted-evolution.</div></div></div>
+      <div class="award"><div class="medal">★</div><div><div class="who">Prof. Sarah Holloway <span class="pill mgs">MGS</span></div><div class="what">Named <strong>Sloan Research Fellow</strong> in Earth System Science.</div></div></div>
+      <div class="award"><div class="medal">★</div><div><div class="who">Dr. Henry Olsson <span class="pill oce">OCE</span></div><div class="what"><strong>Munk Award (early career)</strong> for ocean climate dynamics, ASLO/TOS.</div></div></div>
+      <div class="award"><div class="medal">★</div><div><div class="who">Marisol Cortez (PhD) <span class="pill evr">EVR</span></div><div class="what"><strong>NOAA Knauss Marine Policy Fellowship</strong> for the 2027 cohort.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ============== PUBLICATIONS ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Publications</h2>
+      <span class="tag sans">Four featured papers · 21 total this month</span>
+    </div>
+    <div class="grid g-2">
+      <div class="pub">
+        <div class="journal">Nature <span class="badge gold">Cover</span></div>
+        <h4>Heat-tolerant coral genotypes survive successive bleaching events in the Florida Keys <span class="pill mbe">MBE</span></h4>
+        <div class="authors">Delgado M, Okafor J, Singh R, &amp; the Coral Resilience Lab</div>
+        <div class="doi">doi: 10.1038/s41586-026-09188-2</div>
+      </div>
+      <div class="pub">
+        <div class="journal">Nature Climate Change</div>
+        <h4>Machine-learned guidance reduces rapid-intensification false alarms in operational hurricane forecasting <span class="pill atm">ATM</span></h4>
+        <div class="authors">Bhatt S, Morán L, &amp; collaborators at NOAA AOML / NHC</div>
+        <div class="doi">doi: 10.1038/s41558-026-02114-x</div>
+      </div>
+      <div class="pub">
+        <div class="journal">Science Advances <span class="badge gold">Open Access</span></div>
+        <h4>Slow-slip events trigger detectable changes in offshore pore pressure <span class="pill mgs">MGS</span></h4>
+        <div class="authors">Okonkwo A, Tanaka K, Whitebear J</div>
+        <div class="doi">doi: 10.1126/sciadv.aei.2026.0188</div>
+      </div>
+      <div class="pub">
+        <div class="journal">Limnology &amp; Oceanography</div>
+        <h4>Florida Current transport variability from the new cabled-array record (2018–2025) <span class="pill oce">OCE</span></h4>
+        <div class="authors">Karpov I, Olsson H, &amp; the FC-Array team</div>
+        <div class="doi">doi: 10.1002/lno.12388</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== IN THE FIELD ============== -->
+  <section>
+    <div class="section-head">
+      <h2>In the Field</h2>
+      <span class="tag sans">Five active campaigns · one per department</span>
+    </div>
+    <div class="field-wrap">
+        <!-- Stylized world map (schematic, not geographically precise) -->
+        <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-label="Stylized world map showing field, cruise, and flight campaign locations">
+          <rect width="900" height="420" fill="#fbf7ec"/>
+          <!-- ocean tint -->
+          <g fill="#eaf1f3">
+            <rect x="0" y="0" width="900" height="420"/>
+          </g>
+          <!-- graticule -->
+          <g stroke="#dcd6c5" stroke-width="1">
+            <line x1="0" y1="105" x2="900" y2="105"/>
+            <line x1="0" y1="210" x2="900" y2="210"/>
+            <line x1="0" y1="315" x2="900" y2="315"/>
+            <line x1="225" y1="0" x2="225" y2="420"/>
+            <line x1="450" y1="0" x2="450" y2="420"/>
+            <line x1="675" y1="0" x2="675" y2="420"/>
+          </g>
+          <!-- continents (very stylized blobs) -->
+          <g fill="#e2dcc8" stroke="#c8c1a8" stroke-width="1">
+            <!-- N. America -->
+            <path d="M80,90 C140,60 220,75 240,120 C255,160 220,200 200,210 C180,220 130,205 110,180 C90,155 60,130 80,90 Z"/>
+            <!-- S. America -->
+            <path d="M210,230 C235,225 250,260 245,300 C240,340 220,360 205,350 C190,340 195,280 210,230 Z"/>
+            <!-- Europe -->
+            <path d="M430,100 C470,90 500,110 495,140 C490,160 450,160 430,150 C415,140 410,115 430,100 Z"/>
+            <!-- Africa -->
+            <path d="M450,170 C495,170 520,210 510,270 C500,320 470,340 450,320 C430,290 420,220 450,170 Z"/>
+            <!-- Asia -->
+            <path d="M520,90 C620,75 740,90 770,140 C780,170 740,180 700,175 C640,170 560,160 540,140 C525,125 510,110 520,90 Z"/>
+            <!-- Oceania -->
+            <path d="M730,260 C780,250 810,275 800,300 C780,320 740,310 720,290 C710,278 715,265 730,260 Z"/>
+            <!-- Antarctica -->
+            <path d="M60,380 C260,355 540,360 820,378 C840,395 820,410 60,410 Z"/>
+          </g>
+
+          <!-- Hurricane recon swath (ATM) -->
+          <g fill="none" stroke="#a78bd0" stroke-width="2" stroke-dasharray="4 4" opacity=".6">
+            <path d="M205,205 C260,225 300,245 330,235 C360,225 365,205 380,200"/>
+          </g>
+          <!-- Cruise track in Caribbean (OCE) -->
+          <g fill="none" stroke="#7eb0bd" stroke-width="2" stroke-dasharray="6 3" opacity=".75">
+            <path d="M195,205 C215,215 220,225 235,225 C255,225 270,215 290,210"/>
+          </g>
+
+          <!-- Pins (color = department) -->
+          <!-- Florida Keys reefs (MBE) -->
+          <g><circle cx="200" cy="200" r="10" fill="#e8906f" stroke="white" stroke-width="2"/><circle cx="200" cy="200" r="3" fill="white"/></g>
+          <!-- Atlantic hurricane recon (ATM) -->
+          <g><circle cx="330" cy="225" r="9" fill="#a78bd0" stroke="white" stroke-width="2"/><circle cx="330" cy="225" r="3" fill="white"/></g>
+          <!-- Cascadia (MGS) -->
+          <g><circle cx="135" cy="120" r="9" fill="#d4a955" stroke="white" stroke-width="2"/><circle cx="135" cy="120" r="3" fill="white"/></g>
+          <!-- Walton Smith cruise (OCE) -->
+          <g><circle cx="245" cy="220" r="9" fill="#7eb0bd" stroke="white" stroke-width="2"/><circle cx="245" cy="220" r="3" fill="white"/></g>
+          <!-- Miami-Dade community flood sensors (EVR) -->
+          <g><circle cx="195" cy="218" r="9" fill="#9bb56a" stroke="white" stroke-width="2"/><circle cx="195" cy="218" r="3" fill="white"/></g>
+
+          <!-- Compass -->
+          <g transform="translate(840,40)" font-family="Inter, sans-serif" font-size="10" fill="#5b6470">
+            <circle r="14" fill="none" stroke="#5b6470"/>
+            <text text-anchor="middle" y="-18">N</text>
+            <line x1="0" y1="-12" x2="0" y2="12" stroke="#5b6470"/>
+            <line x1="-12" y1="0" x2="12" y2="0" stroke="#5b6470"/>
+          </g>
+        </svg>
+      <p class="byline sans" style="margin-top:8px;text-align:center">Locations are schematic. Pin colors match the department ribbon; dashed tracks show hurricane recon (ATM) and the <em>Walton Smith</em> cruise (OCE).</p>
+    </div>
+    <div class="grid hero-grid" style="margin-top:18px">
+      <article class="field-card" style="border-top-color:var(--dept-mbe)">
+        <div class="fc-top">
+          <h3 class="fc-loc">Florida Keys reefs</h3>
+          <span class="pill mbe">MBE</span>
+        </div>
+        <p class="fc-desc">Outplanting heat-tolerant coral fragments at three reef sites.</p>
+        <div class="fc-lead">Lead: Delgado, Okafor · 4 grads + 6 undergrads</div>
+      </article>
+      <article class="field-card" style="border-top-color:var(--dept-oce)">
+        <div class="fc-top">
+          <h3 class="fc-loc">R/V <em>Walton Smith</em> cruise</h3>
+          <span class="pill oce">OCE</span>
+        </div>
+        <p class="fc-desc">Florida Current cabled-array servicing — 9 days at sea.</p>
+        <div class="fc-lead">Lead: Karpov · 5 grads</div>
+      </article>
+      <article class="field-card" style="border-top-color:var(--dept-atm)">
+        <div class="fc-top">
+          <h3 class="fc-loc">Atlantic hurricane recon</h3>
+          <span class="pill atm">ATM</span>
+        </div>
+        <p class="fc-desc">Flights of opportunity with the NOAA P-3 out of Lakeland.</p>
+        <div class="fc-lead">Lead: Bhatt, Morán</div>
+      </article>
+      <article class="field-card" style="border-top-color:var(--dept-mgs)">
+        <div class="fc-top">
+          <h3 class="fc-loc">Cascadia margin, OR/WA</h3>
+          <span class="pill mgs">MGS</span>
+        </div>
+        <p class="fc-desc">80-station nodal deployment for slow-slip event imaging.</p>
+        <div class="fc-lead">Lead: Okonkwo · 4 grads</div>
+      </article>
+      <article class="field-card" style="border-top-color:var(--dept-evr)">
+        <div class="fc-top">
+          <h3 class="fc-loc">Miami-Dade flood sensors</h3>
+          <span class="pill evr">EVR</span>
+        </div>
+        <p class="fc-desc">28 low-cost sensors deployed with neighborhood partners across Little Haiti, Liberty City, and Shorecrest.</p>
+        <div class="fc-lead">Lead: Reyes-Tobias + Cortez · 5 grads</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============== STUDENT SPOTLIGHTS ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Spotlights</h2>
+      <span class="tag sans">Three rising voices · student &amp; postdoc highlights</span>
+    </div>
+    <div class="grid g-3">
+      <div class="spotlight">
+        <div class="avatar a-mbe">JO</div>
+        <div>
+          <h4>Jasmine Okafor <span class="pill mbe">MBE</span></h4>
+          <div class="role sans">NOAA Nancy Foster Scholar · 3rd-year PhD, Coral Resilience Lab.</div>
+          <p>Three-year scholarship to extend the Florida Keys outplanting work to Dry Tortugas and Flower Garden Banks national marine sanctuaries.</p>
+        </div>
+      </div>
+      <div class="spotlight">
+        <div class="avatar a-atm">LM</div>
+        <div>
+          <h4>Dr. Lila Morán <span class="pill atm">ATM</span></h4>
+          <div class="role sans">Postdoc · SHIPS-ML+ co-developer.</div>
+          <p>Operational-test lead at NHC for the 2026 season; presenting at AMS Hurricanes &amp; Tropical Meteorology in March.</p>
+        </div>
+      </div>
+      <div class="spotlight">
+        <div class="avatar a-evr">MC</div>
+        <div>
+          <h4>Marisol Cortez <span class="pill evr">EVR</span></h4>
+          <div class="role sans">Knauss Marine Policy Fellow · 5th-year PhD.</div>
+          <p>Joins a U.S. Senate office for the 2027 fellowship year; co-lead on the Miami-Dade community sensor deployment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TALKS / OUTREACH ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Talks, media &amp; outreach</h2>
+      <span class="tag sans">Bringing the school to the world</span>
+    </div>
+    <div class="talk-subhead">Invited talks &amp; keynotes</div>
+    <div class="grid g-3">
+      <article class="talk-card">
+        <div class="tc-date">07 / 02 · Keynote</div>
+        <h4 class="tc-title">Ramirez — Gordon Conference on Deep Earth</h4>
+        <div class="tc-venue">Holderness, NH</div>
+      </article>
+      <article class="talk-card">
+        <div class="tc-date">07 / 14 · Invited</div>
+        <h4 class="tc-title">Bhatt — AMS Conference on Hurricanes &amp; Tropical Meteorology</h4>
+        <div class="tc-venue">San Diego, CA</div>
+      </article>
+      <article class="talk-card">
+        <div class="tc-date">07 / 21 · Plenary</div>
+        <h4 class="tc-title">Delgado — ICRS International Coral Reef Symposium</h4>
+        <div class="tc-venue">Cairns, AU</div>
+      </article>
+    </div>
+    <div class="talk-subhead" style="margin-top:24px">Public engagement &amp; media</div>
+    <div class="grid g-3">
+      <article class="talk-card tc-media">
+        <div class="tc-date">07 / 11 · Radio</div>
+        <h4 class="tc-title">NPR <em>All Things Considered</em></h4>
+        <div class="tc-venue">Bhatt on the 2026 hurricane outlook · ~4M listeners</div>
+      </article>
+      <article class="talk-card tc-media">
+        <div class="tc-date">07 / 23 · Event</div>
+        <h4 class="tc-title">Open House on Virginia Key</h4>
+        <div class="tc-venue">~620 visitors · tank &amp; R/V tours · 24 student volunteers</div>
+      </article>
+      <article class="talk-card tc-media">
+        <div class="tc-date">07 / 05 · K-12</div>
+        <h4 class="tc-title">“Listening to the Earth” classroom visits</h4>
+        <div class="tc-venue">4 Miami-Dade Public Schools · ~280 students reached</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============== SERVICE / EDITORIAL ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Service &amp; community</h2>
+      <span class="tag sans">Quiet but essential work</span>
+    </div>
+    <div class="grid g-3">
+      <div class="card">
+        <div class="meta sans">Editorial</div>
+        <h3>4 new editorial roles</h3>
+        <p>Ramirez (AE, <em>JGR Solid Earth</em>), Bhatt (AE, <em>Mon. Wea. Rev.</em>), Holloway (Editor, <em>Cryosphere</em>), Delgado (Board, <em>Coral Reefs</em>).</p>
+      </div>
+      <div class="card">
+        <div class="meta sans">Panels &amp; review</div>
+        <h3>17 federal review panels</h3>
+        <p>Faculty served on NSF (OCE / AGS / EAR / OPP), NOAA, NASA, and ONR review panels this month — a school record for July.</p>
+      </div>
+      <div class="card">
+        <div class="meta sans">DEI &amp; mentoring</div>
+        <h3>2 new mentoring partnerships</h3>
+        <p>School joins <em>GeoLatinas</em> mentoring network and signs MOU with the tribal college consortium for summer research placements in marine and atmospheric science.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== LOOKING AHEAD ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Looking ahead</h2>
+      <span class="tag sans">August &amp; the new academic year</span>
+    </div>
+    <div class="grid g-3">
+      <div class="card">
+        <div class="meta sans">Aug 18</div>
+        <h3>New cohort orientation</h3>
+        <p>11 incoming PhD students &amp; 4 new postdocs across all three pillars. Welcome reception on the Virginia Key dock.</p>
+      </div>
+      <div class="card">
+        <div class="meta sans">Aug 25–29</div>
+        <h3>Field-and-cruise showcase</h3>
+        <p>Undergraduate posters from the summer at sea, in the tank, and on the rocks — open to the public.</p>
+      </div>
+      <div class="card">
+        <div class="meta sans">Sep 8</div>
+        <h3>State-of-the-School address</h3>
+        <p>Annual report-out, including FY27 strategic priorities and the new Marine + Atmospheric joint hires.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <div class="f-top">
+      <div class="f-title">Making <em>Waves</em></div>
+      <div class="f-sub">Vol. I · No. 1 · July 2026</div>
+    </div>
+    <div class="f-depts">
+      <span class="f-dept atm">Atmospheric Sciences</span>
+      <span class="f-dept evr">Environmental Science &amp; Policy</span>
+      <span class="f-dept mbe">Marine Biology &amp; Ecology</span>
+      <span class="f-dept mgs">Marine Geosciences</span>
+      <span class="f-dept oce">Ocean Sciences</span>
+    </div>
+    <div class="f-bot">
+      <div>Rosenstiel School of Marine, Atmospheric, and Earth Science · University of Miami</div>
+      <div>Nominate next month's wins → <span class="mono">wins@earth.miami.edu</span></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Funding-mix doughnut — values in $K to match the table totals
+  const ctx = document.getElementById('fundingChart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['NOAA (JTTI + RESTORE)', 'NSF EAR', 'ONR'],
+        datasets: [{
+          data: [2105.4, 1397.4, 642.75],
+          backgroundColor: ['#7eb0bd','#d4a955','#a78bd0'],
+          borderColor: '#ffffff',
+          borderWidth: 3,
+          hoverBorderWidth: 3,
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        cutout: '68%',
+        layout: { padding: { top: 4, bottom: 4 } },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              font: { family: 'Inter', size: 10.5 },
+              color: '#2a4554',
+              boxWidth: 8,
+              boxHeight: 8,
+              padding: 10,
+              usePointStyle: true,
+              pointStyle: 'circle'
+            }
+          },
+          tooltip: {
+            backgroundColor: '#0f2e3d',
+            titleFont: { family: 'Inter', size: 11 },
+            bodyFont: { family: 'Inter', size: 12 },
+            padding: 10,
+            callbacks: {
+              label: (ctx) => `${ctx.label}: $${ctx.parsed.toLocaleString()}K`
+            }
+          }
+        }
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
