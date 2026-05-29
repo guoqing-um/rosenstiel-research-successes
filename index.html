@@ -53,7 +53,7 @@
   body {
     margin: 0;
     font-family: "DM Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -237,14 +237,14 @@
   }
   .section-head h2 {
     font-family: "DM Sans", sans-serif;
-    font-size: 36px;
+    font-size: 42px;
     margin: 0;
     letter-spacing: -1px;
     font-weight: 800;
     color: var(--ink);
   }
   .section-head .tag {
-    font-size: 12px;
+    font-size: 13.5px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--muted);
@@ -364,14 +364,14 @@
   }
   .hero-card .h-body h3 {
     font-family: "DM Sans", sans-serif;
-    font-size: 20px;
+    font-size: 23px;
     line-height: 1.25;
     margin: 0 0 14px;
     font-weight: 700;
     color: var(--ink);
   }
   .hero-card .h-body p {
-    font-size: 14.5px;
+    font-size: 16.5px;
     margin: 0 0 18px;
     flex: 1;
     line-height: 1.6;
@@ -455,7 +455,7 @@
   }
   .grant-card .g-bar > i { display: block; height: 100%; border-radius: 5px; }
   .grant-card .g-project {
-    font-size: 15.5px;
+    font-size: 17px;
     line-height: 1.45;
     margin: 0 0 14px;
     font-weight: 600;
@@ -623,8 +623,8 @@
     font-size: 20px;
     box-shadow: 0 4px 16px rgba(255,217,61,.4);
   }
-  .award-card .who { font-weight: 700; font-size: 15.5px; }
-  .award-card .what { color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 6px; }
+  .award-card .who { font-weight: 700; font-size: 17.5px; }
+  .award-card .what { color: var(--muted); font-size: 15.5px; line-height: 1.5; margin-top: 6px; }
 
   /* ====== PUB CARDS ====== */
   .pub-card {
@@ -657,13 +657,13 @@
   }
   .pub-card h4 {
     font-family: "DM Sans", sans-serif;
-    font-size: 19px;
+    font-size: 21px;
     margin: 10px 0 12px;
     line-height: 1.35;
     font-weight: 700;
     color: var(--ink);
   }
-  .pub-card .authors { color: var(--muted); font-size: 14px; font-weight: 600; }
+  .pub-card .authors { color: var(--muted); font-size: 15.5px; font-weight: 600; }
   .pub-card .doi { color: var(--muted); font-size: 12px; margin-top: 10px; font-family: "JetBrains Mono", monospace; }
   .pub-card .badge {
     display: inline-block;
@@ -850,23 +850,40 @@
 </style>
 </head>
 <body>
-
 <div class="page">
+
+  <style>
+    .celebrate {
+      margin: 6px 0 4px;
+      padding: 30px 34px;
+      border-radius: var(--radius);
+      background: linear-gradient(120deg, var(--tint-mbe), var(--tint-atm), var(--tint-oce), var(--tint-evr));
+      background-size: 220% 100%;
+      animation: gradientShift 9s ease infinite;
+      box-shadow: var(--shadow);
+    }
+    .celebrate .eyebrow { font-family:"Inter",sans-serif; font-size:13px; letter-spacing:2.5px; text-transform:uppercase; font-weight:800; color:var(--ink-soft); margin-bottom:12px; }
+    .celebrate h2 { font-family:"DM Sans",sans-serif; font-size:40px; margin:0 0 14px; letter-spacing:-1.2px; font-weight:800; color:var(--ink); line-height:1.1; }
+    .celebrate p { margin:0; font-size:19px; color:var(--ink-soft); max-width:820px; line-height:1.55; }
+    .stat-strip { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:28px; }
+    @media (max-width:700px){ .stat-strip{ grid-template-columns:repeat(2,1fr);} }
+    .stat-strip .stat { background:rgba(255,255,255,.78); border-radius:var(--radius-sm); padding:18px 20px; text-align:left; }
+    .stat-strip .num { font-family:"DM Sans",sans-serif; font-size:42px; font-weight:800; letter-spacing:-1.5px; color:var(--ink); line-height:1; }
+    .stat-strip .lbl { font-family:"Inter",sans-serif; font-size:11.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); font-weight:700; margin-top:8px; }
+  </style>
 
   <!-- ============== MASTHEAD ============== -->
   <header class="masthead">
     <div class="left">
       <div class="school sans">Rosenstiel School of Marine, Atmospheric, and Earth Science · University of Miami</div>
       <div class="title-row">
-        <h1>Making&nbsp;<em>Waves</em><small>Celebrating Rosenstiel research successes each month</small></h1>
+        <h1>Making&nbsp;<em>Waves</em><small>Celebrating this month's wins across the Rosenstiel School</small></h1>
       </div>
     </div>
     <div class="right sans">
       <div class="vol">Vol. I · No. 1</div>
       <div>July 2026 in review</div>
       <div>Published 15 August 2026</div>
-      <!-- Archive link omitted for the inaugural issue (no prior issues to link to).
-           For issue 2 onward, restore as: <a href="archive.html" class="archive-link">View archive →</a> -->
     </div>
   </header>
   <div class="ribbon sans">
@@ -877,168 +894,103 @@
     <span class="seg r-oce"><span class="name">Ocean Sciences</span><span class="code">OCE</span></span>
   </div>
 
-  <div class="subbar sans">
-    <div class="crumbs">
-      <span>Faculty</span><span>Research Staff</span><span>Postdocs</span><span>Graduate Students</span><span>Undergraduates</span>
+  <!-- ============== CELEBRATORY BANNER ============== -->
+  <section style="margin-top:28px">
+    <div class="celebrate">
+      <div class="eyebrow">July 2026 in review</div>
+      <h2>A month of milestones</h2>
+      <p>Two <em>Nature</em>-family papers, a forecasting model adopted by the National Hurricane Center, $4.15M in new funding, and honors in every department. Here are the highlights.</p>
+      <div class="stat-strip">
+        <div class="stat"><div class="num">21</div><div class="lbl">Papers published</div></div>
+        <div class="stat"><div class="num">$4.15M</div><div class="lbl">New funding</div></div>
+        <div class="stat"><div class="num">6</div><div class="lbl">Major honors</div></div>
+        <div class="stat"><div class="num">5</div><div class="lbl">Departments shining</div></div>
+        <div class="stat"><div class="num">900+</div><div class="lbl">People reached</div></div>
+      </div>
     </div>
-    <div>Shared with the school &amp; broader community</div>
-  </div>
-
+  </section>
 
   <!-- ============== HERO HIGHLIGHTS ============== -->
   <section>
     <div class="section-head">
-      <h2>Top highlights</h2>
-      <span class="tag sans">Five headline wins · one per department</span>
+      <h2>Highlights</h2>
+      <span class="tag sans">One standout per discipline</span>
     </div>
-    <div class="grid hero-grid">
+    <div class="grid g-4">
       <article class="card hero-card h-mbe">
-        <div class="h-band">
-          <span class="h-meta">Coral resilience · MBE</span>
-          <span class="h-num">01</span>
-        </div>
+        <div class="h-band"><span class="h-meta">Coral resilience · MBE</span><span class="h-num">01</span></div>
         <div class="h-body">
-          <h3>Heat-tolerant coral genotypes published in <em>Nature</em></h3>
-          <p>Delgado's Coral Resilience Lab identifies three Caribbean genotypes that survived the 2023–24 bleaching with intact symbiont function — 1,200 fragments now outplanted at three Keys reef sites.</p>
-          <div class="byline sans">Delgado et al., <em>Nature</em> 631, 188–194 (2026)</div>
+          <h3>Heat-tolerant corals make the cover of <em>Nature</em></h3>
+          <p>Delgado's lab found three Caribbean genotypes that survived the 2023–24 bleaching with symbionts intact — and outplanted 1,200 fragments in the Keys.</p>
+          <div class="byline sans">Delgado et al., <em>Nature</em> (2026)</div>
         </div>
       </article>
       <article class="card hero-card h-atm">
-        <div class="h-band">
-          <span class="h-meta">Hurricane forecasting · ATM</span>
-          <span class="h-num">02</span>
-        </div>
+        <div class="h-band"><span class="h-meta">Hurricane forecasting · ATM</span><span class="h-num">02</span></div>
         <div class="h-body">
-          <h3>ML rapid-intensification model goes operational at NHC</h3>
-          <p>Bhatt &amp; Morán's “SHIPS-ML+” cuts 24-hr RI false alarms by 31% in 2024–25 hindcasts. Now in operational test at the National Hurricane Center for the 2026 season.</p>
+          <h3>Forecasting model goes operational at the NHC</h3>
+          <p>Bhatt &amp; Morán's “SHIPS-ML+” cuts 24-hr rapid-intensification false alarms by 31% — now in operational test for the 2026 season.</p>
           <div class="byline sans">NOAA JTTI · with NHC &amp; AOML</div>
         </div>
       </article>
       <article class="card hero-card h-mgs">
-        <div class="h-band">
-          <span class="h-meta">NSF CAREER · MGS</span>
-          <span class="h-num">03</span>
-        </div>
+        <div class="h-band"><span class="h-meta">NSF CAREER · MGS</span><span class="h-num">03</span></div>
         <div class="h-body">
-          <h3>NSF CAREER award for slow-slip imaging in Cascadia</h3>
-          <p>Okonkwo's 5-year, $785K award funds high-resolution imaging of slow-slip events along the Cascadia margin and a new “Listening to the Earth” module for K-12 classrooms.</p>
-          <div class="byline sans">Solid Earth · NSF EAR-2614402</div>
+          <h3>NSF CAREER award for slow-slip imaging</h3>
+          <p>Okonkwo wins a 5-year, $785K award to image slow-slip events along the Cascadia margin — plus a K-12 “Listening to the Earth” module.</p>
+          <div class="byline sans">NSF EAR-2614402</div>
         </div>
       </article>
       <article class="card hero-card h-oce">
-        <div class="h-band">
-          <span class="h-meta">Ocean transport · OCE</span>
-          <span class="h-num">04</span>
-        </div>
+        <div class="h-band"><span class="h-meta">Ocean transport · OCE</span><span class="h-num">04</span></div>
         <div class="h-body">
-          <h3>First 7-year cabled-array Florida Current record</h3>
-          <p>Karpov, Olsson &amp; the FC-Array team publish the longest continuous Florida Current transport record to date — revealing significant variability linked to AMOC.</p>
+          <h3>Longest-ever Florida Current record published</h3>
+          <p>Karpov, Olsson &amp; the FC-Array team release a 7-year continuous transport record, revealing variability linked to AMOC.</p>
           <div class="byline sans">Karpov et al., <em>L&amp;O</em> (2026)</div>
         </div>
       </article>
-      <article class="card hero-card h-evr">
-        <div class="h-band">
-          <span class="h-meta">Community resilience · EVR</span>
-          <span class="h-num">05</span>
-        </div>
-        <div class="h-body">
-          <h3>South Florida's largest community flood-sensor network goes live</h3>
-          <p>Reyes-Tobias &amp; Cortez deploy 28 low-cost sensors with neighborhood partners across Little Haiti, Liberty City, and Shorecrest — co-designed with frontline residents.</p>
-          <div class="byline sans">NOAA Sea Grant · <em>Env. Sci. &amp; Policy</em> (2026)</div>
-        </div>
-      </article>
+    </div>
+  </section>
+
+  <!-- ============== HONORS ============== -->
+  <section>
+    <div class="section-head">
+      <h2>Honors</h2>
+      <span class="tag sans">Awards &amp; fellowships</span>
+    </div>
+    <div class="grid g-2">
+      <div class="award-card"><div class="medal">★</div><div><div class="who">Prof. Lucia Ramirez <span class="pill mgs">MGS</span></div><div class="what">Elected <strong>AGU Fellow</strong> for contributions to mantle imaging and mentorship.</div></div></div>
+      <div class="award-card"><div class="medal">★</div><div><div class="who">Prof. Sharan Bhatt <span class="pill atm">ATM</span></div><div class="what">Elected <strong>AMS Fellow</strong> for advances in tropical cyclone prediction.</div></div></div>
+      <div class="award-card"><div class="medal">★</div><div><div class="who">Prof. Maya Delgado <span class="pill mbe">MBE</span></div><div class="what"><strong>ASLO Yentsch–Schindler Early Career Award</strong> for coral assisted-evolution.</div></div></div>
+      <div class="award-card"><div class="medal">★</div><div><div class="who">Marisol Cortez (PhD) <span class="pill evr">EVR</span></div><div class="what"><strong>NOAA Knauss Marine Policy Fellowship</strong> for the 2027 cohort.</div></div></div>
     </div>
   </section>
 
   <!-- ============== GRANTS ============== -->
   <section>
     <div class="section-head">
-      <h2>Grants &amp; new funding</h2>
-      <span class="tag sans">$4.15M across the top 5 new awards</span>
+      <h2>Funding</h2>
+      <span class="tag sans">$4.15M across the top awards</span>
     </div>
-    <div class="grid hero-grid">
-      <article class="grant-card" style="border-top-color:#5a96a4">
-        <div class="g-top">
-          <span class="agency">NOAA JTTI</span>
-          <span class="g-term">3 yr</span>
-        </div>
-        <div class="g-amt">$1,180,000</div>
-        <div class="g-bar"><i style="width:100%;background:#5a96a4"></i></div>
+    <div class="grid g-3">
+      <article class="grant-card" style="border-top-color:var(--dept-oce)">
+        <div class="g-top"><span class="agency">NOAA JTTI</span><span class="g-term">3 yr</span></div>
+        <div class="g-amt">$1.18M</div>
         <p class="g-project">SHIPS-ML+: operational ML for hurricane rapid intensification</p>
         <div class="g-pi"><strong>S. Bhatt</strong>, L. Morán</div>
       </article>
-      <article class="grant-card" style="border-top-color:#5a96a4">
-        <div class="g-top">
-          <span class="agency">NOAA RESTORE</span>
-          <span class="g-term">4 yr</span>
-        </div>
-        <div class="g-amt">$925,400</div>
-        <div class="g-bar"><i style="width:78%;background:#5a96a4"></i></div>
+      <article class="grant-card" style="border-top-color:var(--dept-mbe)">
+        <div class="g-top"><span class="agency">NOAA RESTORE</span><span class="g-term">4 yr</span></div>
+        <div class="g-amt">$925K</div>
         <p class="g-project">Climate-resilient coral genotypes for Florida Keys restoration</p>
         <div class="g-pi"><strong>M. Delgado</strong></div>
       </article>
-      <article class="grant-card" style="border-top-color:#9a7a26">
-        <div class="g-top">
-          <span class="agency">NSF EAR</span>
-          <span class="g-term">5 yr</span>
-        </div>
-        <div class="g-amt">$785,000</div>
-        <div class="g-bar"><i style="width:67%;background:#9a7a26"></i></div>
+      <article class="grant-card" style="border-top-color:var(--dept-mgs)">
+        <div class="g-top"><span class="agency">NSF EAR</span><span class="g-term">5 yr</span></div>
+        <div class="g-amt">$785K</div>
         <p class="g-project">CAREER: Imaging slow-slip in Cascadia with dense arrays</p>
         <div class="g-pi"><strong>A. Okonkwo</strong></div>
       </article>
-      <article class="grant-card" style="border-top-color:var(--ink)">
-        <div class="g-top">
-          <span class="agency">ONR</span>
-          <span class="g-term">3 yr</span>
-        </div>
-        <div class="g-amt">$642,750</div>
-        <div class="g-bar"><i style="width:55%;background:var(--ink)"></i></div>
-        <p class="g-project">Submesoscale air–sea fluxes in the Gulf Stream front</p>
-        <div class="g-pi"><strong>I. Karpov</strong></div>
-      </article>
-      <article class="grant-card" style="border-top-color:#9a7a26">
-        <div class="g-top">
-          <span class="agency">NSF EAR</span>
-          <span class="g-term">3 yr</span>
-        </div>
-        <div class="g-amt">$612,400</div>
-        <div class="g-bar"><i style="width:52%;background:#9a7a26"></i></div>
-        <p class="g-project">Joint seismic–MT inversion of mantle upwellings</p>
-        <div class="g-pi"><strong>L. Ramirez</strong>, H. Park</div>
-      </article>
-    </div>
-    <div class="card chart-card chart-card-wide" style="margin-top:18px">
-      <div class="grid" style="grid-template-columns: 1fr 1.4fr; gap: 24px; align-items:center;">
-        <div class="donut-wrap">
-          <canvas id="fundingChart" height="220"></canvas>
-          <div class="donut-total">
-            <div class="big">$4.15M</div>
-            <div class="small">Top 5 · July</div>
-          </div>
-        </div>
-        <div>
-          <div class="meta sans">Funding mix · This month</div>
-          <h3 style="margin: 4px 0 10px">Where the new dollars come from</h3>
-          <p style="margin:0">NOAA leads this month — first ≥$1M JTTI award to the school since 2022, and the first NOAA RESTORE award for the new Coral Resilience Lab. NSF EAR contributes through two MGS-led awards (Cascadia slow-slip imaging and joint seismic–MT inversion).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== AWARDS ============== -->
-  <section>
-    <div class="section-head">
-      <h2>Honors</h2>
-      <span class="tag sans">Six headline awards across all five departments</span>
-    </div>
-    <div class="grid g-3">
-      <div class="award"><div class="medal">★</div><div><div class="who">Prof. Lucia Ramirez <span class="pill mgs">MGS</span></div><div class="what">Elected <strong>AGU Fellow</strong> for contributions to mantle imaging and mentorship.</div></div></div>
-      <div class="award"><div class="medal">★</div><div><div class="who">Prof. Sharan Bhatt <span class="pill atm">ATM</span></div><div class="what">Elected <strong>AMS Fellow</strong> for advances in tropical cyclone prediction.</div></div></div>
-      <div class="award"><div class="medal">★</div><div><div class="who">Prof. Maya Delgado <span class="pill mbe">MBE</span></div><div class="what"><strong>ASLO Yentsch–Schindler Early Career Award</strong> for coral assisted-evolution.</div></div></div>
-      <div class="award"><div class="medal">★</div><div><div class="who">Prof. Sarah Holloway <span class="pill mgs">MGS</span></div><div class="what">Named <strong>Sloan Research Fellow</strong> in Earth System Science.</div></div></div>
-      <div class="award"><div class="medal">★</div><div><div class="who">Dr. Henry Olsson <span class="pill oce">OCE</span></div><div class="what"><strong>Munk Award (early career)</strong> for ocean climate dynamics, ASLO/TOS.</div></div></div>
-      <div class="award"><div class="medal">★</div><div><div class="who">Marisol Cortez (PhD) <span class="pill evr">EVR</span></div><div class="what"><strong>NOAA Knauss Marine Policy Fellowship</strong> for the 2027 cohort.</div></div></div>
     </div>
   </section>
 
@@ -1046,251 +998,26 @@
   <section>
     <div class="section-head">
       <h2>Publications</h2>
-      <span class="tag sans">Four featured papers · 21 total this month</span>
+      <span class="tag sans">3 of 21 papers this month</span>
     </div>
-    <div class="grid g-2">
-      <div class="pub">
+    <div class="grid g-3">
+      <div class="pub-card">
         <div class="journal">Nature <span class="badge gold">Cover</span></div>
         <h4>Heat-tolerant coral genotypes survive successive bleaching events in the Florida Keys <span class="pill mbe">MBE</span></h4>
         <div class="authors">Delgado M, Okafor J, Singh R, &amp; the Coral Resilience Lab</div>
         <div class="doi">doi: 10.1038/s41586-026-09188-2</div>
       </div>
-      <div class="pub">
+      <div class="pub-card">
         <div class="journal">Nature Climate Change</div>
         <h4>Machine-learned guidance reduces rapid-intensification false alarms in operational hurricane forecasting <span class="pill atm">ATM</span></h4>
         <div class="authors">Bhatt S, Morán L, &amp; collaborators at NOAA AOML / NHC</div>
         <div class="doi">doi: 10.1038/s41558-026-02114-x</div>
       </div>
-      <div class="pub">
-        <div class="journal">Science Advances <span class="badge gold">Open Access</span></div>
-        <h4>Slow-slip events trigger detectable changes in offshore pore pressure <span class="pill mgs">MGS</span></h4>
-        <div class="authors">Okonkwo A, Tanaka K, Whitebear J</div>
-        <div class="doi">doi: 10.1126/sciadv.aei.2026.0188</div>
-      </div>
-      <div class="pub">
+      <div class="pub-card">
         <div class="journal">Limnology &amp; Oceanography</div>
         <h4>Florida Current transport variability from the new cabled-array record (2018–2025) <span class="pill oce">OCE</span></h4>
         <div class="authors">Karpov I, Olsson H, &amp; the FC-Array team</div>
         <div class="doi">doi: 10.1002/lno.12388</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== IN THE FIELD ============== -->
-  <section>
-    <div class="section-head">
-      <h2>In the Field</h2>
-      <span class="tag sans">Five active campaigns · one per department</span>
-    </div>
-    <div class="field-wrap">
-        <!-- Stylized world map (schematic, not geographically precise) -->
-        <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-label="Stylized world map showing field, cruise, and flight campaign locations">
-          <rect width="900" height="420" fill="#fbf7ec"/>
-          <!-- ocean tint -->
-          <g fill="#eaf1f3">
-            <rect x="0" y="0" width="900" height="420"/>
-          </g>
-          <!-- graticule -->
-          <g stroke="#dcd6c5" stroke-width="1">
-            <line x1="0" y1="105" x2="900" y2="105"/>
-            <line x1="0" y1="210" x2="900" y2="210"/>
-            <line x1="0" y1="315" x2="900" y2="315"/>
-            <line x1="225" y1="0" x2="225" y2="420"/>
-            <line x1="450" y1="0" x2="450" y2="420"/>
-            <line x1="675" y1="0" x2="675" y2="420"/>
-          </g>
-          <!-- continents (very stylized blobs) -->
-          <g fill="#e2dcc8" stroke="#c8c1a8" stroke-width="1">
-            <!-- N. America -->
-            <path d="M80,90 C140,60 220,75 240,120 C255,160 220,200 200,210 C180,220 130,205 110,180 C90,155 60,130 80,90 Z"/>
-            <!-- S. America -->
-            <path d="M210,230 C235,225 250,260 245,300 C240,340 220,360 205,350 C190,340 195,280 210,230 Z"/>
-            <!-- Europe -->
-            <path d="M430,100 C470,90 500,110 495,140 C490,160 450,160 430,150 C415,140 410,115 430,100 Z"/>
-            <!-- Africa -->
-            <path d="M450,170 C495,170 520,210 510,270 C500,320 470,340 450,320 C430,290 420,220 450,170 Z"/>
-            <!-- Asia -->
-            <path d="M520,90 C620,75 740,90 770,140 C780,170 740,180 700,175 C640,170 560,160 540,140 C525,125 510,110 520,90 Z"/>
-            <!-- Oceania -->
-            <path d="M730,260 C780,250 810,275 800,300 C780,320 740,310 720,290 C710,278 715,265 730,260 Z"/>
-            <!-- Antarctica -->
-            <path d="M60,380 C260,355 540,360 820,378 C840,395 820,410 60,410 Z"/>
-          </g>
-
-          <!-- Hurricane recon swath (ATM) -->
-          <g fill="none" stroke="#a78bd0" stroke-width="2" stroke-dasharray="4 4" opacity=".6">
-            <path d="M205,205 C260,225 300,245 330,235 C360,225 365,205 380,200"/>
-          </g>
-          <!-- Cruise track in Caribbean (OCE) -->
-          <g fill="none" stroke="#7eb0bd" stroke-width="2" stroke-dasharray="6 3" opacity=".75">
-            <path d="M195,205 C215,215 220,225 235,225 C255,225 270,215 290,210"/>
-          </g>
-
-          <!-- Pins (color = department) -->
-          <!-- Florida Keys reefs (MBE) -->
-          <g><circle cx="200" cy="200" r="10" fill="#e8906f" stroke="white" stroke-width="2"/><circle cx="200" cy="200" r="3" fill="white"/></g>
-          <!-- Atlantic hurricane recon (ATM) -->
-          <g><circle cx="330" cy="225" r="9" fill="#a78bd0" stroke="white" stroke-width="2"/><circle cx="330" cy="225" r="3" fill="white"/></g>
-          <!-- Cascadia (MGS) -->
-          <g><circle cx="135" cy="120" r="9" fill="#d4a955" stroke="white" stroke-width="2"/><circle cx="135" cy="120" r="3" fill="white"/></g>
-          <!-- Walton Smith cruise (OCE) -->
-          <g><circle cx="245" cy="220" r="9" fill="#7eb0bd" stroke="white" stroke-width="2"/><circle cx="245" cy="220" r="3" fill="white"/></g>
-          <!-- Miami-Dade community flood sensors (EVR) -->
-          <g><circle cx="195" cy="218" r="9" fill="#9bb56a" stroke="white" stroke-width="2"/><circle cx="195" cy="218" r="3" fill="white"/></g>
-
-          <!-- Compass -->
-          <g transform="translate(840,40)" font-family="Inter, sans-serif" font-size="10" fill="#5b6470">
-            <circle r="14" fill="none" stroke="#5b6470"/>
-            <text text-anchor="middle" y="-18">N</text>
-            <line x1="0" y1="-12" x2="0" y2="12" stroke="#5b6470"/>
-            <line x1="-12" y1="0" x2="12" y2="0" stroke="#5b6470"/>
-          </g>
-        </svg>
-      <p class="byline sans" style="margin-top:8px;text-align:center">Locations are schematic. Pin colors match the department ribbon; dashed tracks show hurricane recon (ATM) and the <em>Walton Smith</em> cruise (OCE).</p>
-    </div>
-    <div class="grid hero-grid" style="margin-top:18px">
-      <article class="field-card" style="border-top-color:var(--dept-mbe)">
-        <div class="fc-top">
-          <h3 class="fc-loc">Florida Keys reefs</h3>
-          <span class="pill mbe">MBE</span>
-        </div>
-        <p class="fc-desc">Outplanting heat-tolerant coral fragments at three reef sites.</p>
-        <div class="fc-lead">Lead: Delgado, Okafor · 4 grads + 6 undergrads</div>
-      </article>
-      <article class="field-card" style="border-top-color:var(--dept-oce)">
-        <div class="fc-top">
-          <h3 class="fc-loc">R/V <em>Walton Smith</em> cruise</h3>
-          <span class="pill oce">OCE</span>
-        </div>
-        <p class="fc-desc">Florida Current cabled-array servicing — 9 days at sea.</p>
-        <div class="fc-lead">Lead: Karpov · 5 grads</div>
-      </article>
-      <article class="field-card" style="border-top-color:var(--dept-atm)">
-        <div class="fc-top">
-          <h3 class="fc-loc">Atlantic hurricane recon</h3>
-          <span class="pill atm">ATM</span>
-        </div>
-        <p class="fc-desc">Flights of opportunity with the NOAA P-3 out of Lakeland.</p>
-        <div class="fc-lead">Lead: Bhatt, Morán</div>
-      </article>
-      <article class="field-card" style="border-top-color:var(--dept-mgs)">
-        <div class="fc-top">
-          <h3 class="fc-loc">Cascadia margin, OR/WA</h3>
-          <span class="pill mgs">MGS</span>
-        </div>
-        <p class="fc-desc">80-station nodal deployment for slow-slip event imaging.</p>
-        <div class="fc-lead">Lead: Okonkwo · 4 grads</div>
-      </article>
-      <article class="field-card" style="border-top-color:var(--dept-evr)">
-        <div class="fc-top">
-          <h3 class="fc-loc">Miami-Dade flood sensors</h3>
-          <span class="pill evr">EVR</span>
-        </div>
-        <p class="fc-desc">28 low-cost sensors deployed with neighborhood partners across Little Haiti, Liberty City, and Shorecrest.</p>
-        <div class="fc-lead">Lead: Reyes-Tobias + Cortez · 5 grads</div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============== STUDENT SPOTLIGHTS ============== -->
-  <section>
-    <div class="section-head">
-      <h2>Spotlights</h2>
-      <span class="tag sans">Three rising voices · student &amp; postdoc highlights</span>
-    </div>
-    <div class="grid g-3">
-      <div class="spotlight">
-        <div class="avatar a-mbe">JO</div>
-        <div>
-          <h4>Jasmine Okafor <span class="pill mbe">MBE</span></h4>
-          <div class="role sans">NOAA Nancy Foster Scholar · 3rd-year PhD, Coral Resilience Lab.</div>
-          <p>Three-year scholarship to extend the Florida Keys outplanting work to Dry Tortugas and Flower Garden Banks national marine sanctuaries.</p>
-        </div>
-      </div>
-      <div class="spotlight">
-        <div class="avatar a-atm">LM</div>
-        <div>
-          <h4>Dr. Lila Morán <span class="pill atm">ATM</span></h4>
-          <div class="role sans">Postdoc · SHIPS-ML+ co-developer.</div>
-          <p>Operational-test lead at NHC for the 2026 season; presenting at AMS Hurricanes &amp; Tropical Meteorology in March.</p>
-        </div>
-      </div>
-      <div class="spotlight">
-        <div class="avatar a-evr">MC</div>
-        <div>
-          <h4>Marisol Cortez <span class="pill evr">EVR</span></h4>
-          <div class="role sans">Knauss Marine Policy Fellow · 5th-year PhD.</div>
-          <p>Joins a U.S. Senate office for the 2027 fellowship year; co-lead on the Miami-Dade community sensor deployment.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== TALKS / OUTREACH ============== -->
-  <section>
-    <div class="section-head">
-      <h2>Talks, media &amp; outreach</h2>
-      <span class="tag sans">Bringing the school to the world</span>
-    </div>
-    <div class="talk-subhead">Invited talks &amp; keynotes</div>
-    <div class="grid g-3">
-      <article class="talk-card">
-        <div class="tc-date">07 / 02 · Keynote</div>
-        <h4 class="tc-title">Ramirez — Gordon Conference on Deep Earth</h4>
-        <div class="tc-venue">Holderness, NH</div>
-      </article>
-      <article class="talk-card">
-        <div class="tc-date">07 / 14 · Invited</div>
-        <h4 class="tc-title">Bhatt — AMS Conference on Hurricanes &amp; Tropical Meteorology</h4>
-        <div class="tc-venue">San Diego, CA</div>
-      </article>
-      <article class="talk-card">
-        <div class="tc-date">07 / 21 · Plenary</div>
-        <h4 class="tc-title">Delgado — ICRS International Coral Reef Symposium</h4>
-        <div class="tc-venue">Cairns, AU</div>
-      </article>
-    </div>
-    <div class="talk-subhead" style="margin-top:24px">Public engagement &amp; media</div>
-    <div class="grid g-3">
-      <article class="talk-card tc-media">
-        <div class="tc-date">07 / 11 · Radio</div>
-        <h4 class="tc-title">NPR <em>All Things Considered</em></h4>
-        <div class="tc-venue">Bhatt on the 2026 hurricane outlook · ~4M listeners</div>
-      </article>
-      <article class="talk-card tc-media">
-        <div class="tc-date">07 / 23 · Event</div>
-        <h4 class="tc-title">Open House on Virginia Key</h4>
-        <div class="tc-venue">~620 visitors · tank &amp; R/V tours · 24 student volunteers</div>
-      </article>
-      <article class="talk-card tc-media">
-        <div class="tc-date">07 / 05 · K-12</div>
-        <h4 class="tc-title">“Listening to the Earth” classroom visits</h4>
-        <div class="tc-venue">4 Miami-Dade Public Schools · ~280 students reached</div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============== SERVICE / EDITORIAL ============== -->
-  <section>
-    <div class="section-head">
-      <h2>Service &amp; community</h2>
-      <span class="tag sans">Quiet but essential work</span>
-    </div>
-    <div class="grid g-3">
-      <div class="card">
-        <div class="meta sans">Editorial</div>
-        <h3>4 new editorial roles</h3>
-        <p>Ramirez (AE, <em>JGR Solid Earth</em>), Bhatt (AE, <em>Mon. Wea. Rev.</em>), Holloway (Editor, <em>Cryosphere</em>), Delgado (Board, <em>Coral Reefs</em>).</p>
-      </div>
-      <div class="card">
-        <div class="meta sans">Panels &amp; review</div>
-        <h3>17 federal review panels</h3>
-        <p>Faculty served on NSF (OCE / AGS / EAR / OPP), NOAA, NASA, and ONR review panels this month — a school record for July.</p>
-      </div>
-      <div class="card">
-        <div class="meta sans">DEI &amp; mentoring</div>
-        <h3>2 new mentoring partnerships</h3>
-        <p>School joins <em>GeoLatinas</em> mentoring network and signs MOU with the tribal college consortium for summer research placements in marine and atmospheric science.</p>
       </div>
     </div>
   </section>
@@ -1310,60 +1037,9 @@
     </div>
     <div class="f-bot">
       <div>Rosenstiel School of Marine, Atmospheric, and Earth Science · University of Miami</div>
-      <div>Nominate next month's wins → <span class="mono">wins@earth.miami.edu</span></div>
+      <div>Celebrate next month's wins → <span class="mono">wins@earth.miami.edu</span></div>
     </div>
   </footer>
 </div>
-
-<script>
-  // Funding-mix doughnut — values in $K to match the table totals
-  const ctx = document.getElementById('fundingChart');
-  if (ctx) {
-    new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['NOAA (JTTI + RESTORE)', 'NSF EAR', 'ONR'],
-        datasets: [{
-          data: [2105.4, 1397.4, 642.75],
-          backgroundColor: ['#7eb0bd','#d4a955','#a78bd0'],
-          borderColor: '#ffffff',
-          borderWidth: 3,
-          hoverBorderWidth: 3,
-          hoverOffset: 6
-        }]
-      },
-      options: {
-        cutout: '68%',
-        layout: { padding: { top: 4, bottom: 4 } },
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              font: { family: 'Inter', size: 10.5 },
-              color: '#2a4554',
-              boxWidth: 8,
-              boxHeight: 8,
-              padding: 10,
-              usePointStyle: true,
-              pointStyle: 'circle'
-            }
-          },
-          tooltip: {
-            backgroundColor: '#0f2e3d',
-            titleFont: { family: 'Inter', size: 11 },
-            bodyFont: { family: 'Inter', size: 12 },
-            padding: 10,
-            callbacks: {
-              label: (ctx) => `${ctx.label}: $${ctx.parsed.toLocaleString()}K`
-            }
-          }
-        }
-      }
-    });
-  }
-</script>
-
-
-
 </body>
 </html>
