@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Making Waves — Rosenstiel School Highlights — July 2026</title>
+<title>Rosenstiel Rising — Monthly Research Wins &amp; Highlights — July 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
@@ -100,24 +100,38 @@
   }
   .masthead .left h1 {
     font-family: "DM Sans", sans-serif;
-    font-size: 80px;
-    line-height: 0.92;
+    font-size: clamp(46px, 8.5vw, 92px);
+    line-height: 0.9;
     margin: 0;
     letter-spacing: -3px;
     font-weight: 800;
     color: var(--ink);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 0.32em;
+    row-gap: 0;
+  }
+  .masthead .left h1 .word-rise {
+    position: relative;
+    display: inline-block;
   }
   .masthead .left h1 em {
     font-style: italic;
-    font-weight: 500;
-    background: linear-gradient(135deg, var(--dept-mbe), var(--dept-atm));
+    font-weight: 600;
+    background: linear-gradient(100deg,
+      var(--dept-mbe) 0%, var(--accent-gold) 32%,
+      var(--dept-oce) 64%, var(--dept-atm) 100%);
+    background-size: 220% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientShift 7s ease infinite;
   }
   .masthead .left h1 small {
+    flex: 0 0 100%;
     display: block;
-    font-size: 17px;
+    font-size: clamp(15px, 2.2vw, 17px);
     color: var(--muted);
     font-weight: 400;
     font-style: italic;
@@ -877,7 +891,7 @@
     <div class="left">
       <div class="school sans">Rosenstiel School of Marine, Atmospheric, and Earth Science · University of Miami</div>
       <div class="title-row">
-        <h1>Making&nbsp;<em>Waves</em><small>Celebrating this month's wins across the Rosenstiel School</small></h1>
+        <h1><span class="word-base">Rosenstiel</span><span class="word-rise"><em>Rising</em></span><small>Monthly Research Wins &amp; Highlights</small></h1>
       </div>
     </div>
     <div class="right sans">
@@ -1024,7 +1038,7 @@
   <!-- ============== FOOTER ============== -->
   <footer>
     <div class="f-top">
-      <div class="f-title">Making <em>Waves</em></div>
+      <div class="f-title">Rosenstiel <em>Rising</em></div>
       <div class="f-sub">Vol. I · No. 1 · July 2026</div>
     </div>
     <div class="f-depts">
