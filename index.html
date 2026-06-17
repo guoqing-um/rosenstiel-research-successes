@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>On the Rise — Rosenstiel Research Community — Summer 2026</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
   :root {
+    /* ===== TYPOGRAPHY ===== */
+    --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+    --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
     /* ===== WARM / CELEBRATORY-PROFESSIONAL PALETTE ===== */
     --bg: #FDFBF7;            /* soft warm white */
     --bg-2: #FAF5EC;          /* warm cream panel */
@@ -28,20 +32,20 @@
     --grad: linear-gradient(90deg, var(--dept-mbe), var(--dept-mgs), var(--accent-gold), var(--dept-oce), var(--dept-atm));
 
     /* Department coding — matched to the COAST REU site palette */
-    --dept-atm:   #1663CE;    /* Atmospheric — blue */
-    --dept-evr:   #E0700F;    /* Environmental — orange */
-    --dept-mbe:   #3E9C26;    /* Marine Bio — green */
-    --dept-mgs:   #8B5E3C;    /* Marine Geo — brown */
-    --dept-oce:   #0E9488;    /* Ocean — teal */
-    --dept-cimas: #687682;    /* CIMAS — gray (cross-cutting institute) */
+    --dept-atm:   #AD8EDE;    /* Atmospheric — light amethyst */
+    --dept-evr:   #46A857;    /* Environmental — green */
+    --dept-mbe:   #E8794E;    /* Marine Bio — coral */
+    --dept-mgs:   #AE7C38;    /* Marine Geo — soil ochre */
+    --dept-oce:   #2E94B0;    /* Ocean — teal blue (shifted from periwinkle to separate from ATM amethyst) */
+    --dept-cimas: #7E8B97;    /* CIMAS — soft gray */
     --dept-cross: #8a8a8a;
 
     /* Soft tints — light department backgrounds (from REU site) */
-    --tint-atm:   #E3EBF8;
-    --tint-evr:   #FCE7CC;
-    --tint-mbe:   #E5F1D9;
-    --tint-mgs:   #EEE5D7;
-    --tint-oce:   #D8EFEB;
+    --tint-atm:   #EEE7F9;
+    --tint-evr:   #E1F1E4;
+    --tint-mbe:   #FBE7DD;
+    --tint-mgs:   #F1E6D2;
+    --tint-oce:   #DDEEF3;
     --tint-cimas: #ECEFF1;
 
     --shadow: 0 2px 8px rgba(20,35,59,.06), 0 1px 2px rgba(20,35,59,.04);
@@ -54,13 +58,13 @@
   html, body { background: var(--bg); color: var(--ink); }
   body {
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  .serif { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .serif { font-family: var(--font-display); }
 
   .page {
     max-width: 1180px;
@@ -83,7 +87,7 @@
     position: absolute;
     left: 0; bottom: -2px;
     width: 220px; height: 4px;
-    background: var(--grad);
+    display: none;
     border-radius: 4px;
   }
   .masthead .left .school {
@@ -95,7 +99,7 @@
     font-weight: 600;
   }
   .masthead .left h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
     font-size: clamp(40px, 6vw, 64px);
     line-height: 1.0;
     margin: 0;
@@ -104,7 +108,7 @@
     color: var(--ink);
   }
   .masthead .left h1 em {
-    font-style: italic;
+    font-style: normal;
     font-weight: 700;
     display: inline-block;
     padding-right: 0.12em;
@@ -121,7 +125,7 @@
     margin-top: 14px;
     line-height: 1.45;
     max-width: 540px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
   }
   .masthead .right {
     text-align: right;
@@ -217,11 +221,16 @@
     position: absolute;
     left: 0; bottom: -1px;
     width: 64px; height: 3px;
-    background: var(--grad);
+    background: var(--accent);
     border-radius: 3px;
   }
+  /* Per-section accent colors (brand-only palette) */
+  .section-head.sh-hl::after  { background: #FF6A1A; }  /* Highlights — bright orange */
+  .section-head.sh-hon::after { background: #F2A900; }  /* Honors — gold */
+  .section-head.sh-fun::after { background: #2FB457; }  /* Funding — green */
+  .section-head.sh-pub::after { background: #11A7C2; }  /* Publications — teal */
   .section-head h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
     font-size: 30px;
     margin: 0;
     letter-spacing: -0.3px;
@@ -297,7 +306,7 @@
   .hero-card.h-oce { border-top-color: var(--dept-oce); }   .hero-card.h-oce .h-band { background: var(--tint-oce); }   .hero-card.h-oce .h-meta { color: var(--dept-oce); }
   .hero-card.h-cimas { border-top-color: var(--dept-cimas); } .hero-card.h-cimas .h-band { background: var(--tint-cimas); } .hero-card.h-cimas .h-meta { color: var(--dept-cimas); }
   .hero-card .h-band .h-num {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 24px;
     line-height: 1;
     letter-spacing: 0;
@@ -310,7 +319,7 @@
   }
   .hero-card .h-body { padding: 14px 22px 24px; flex: 1; display: flex; flex-direction: column; }
   .hero-card .h-body h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
     font-size: 20px;
     line-height: 1.3;
     margin: 0 0 12px;
@@ -371,7 +380,7 @@
     font-weight: 600;
   }
   .grant-card .g-amt {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 30px;
     font-weight: 600;
     line-height: 1;
@@ -436,7 +445,7 @@
     font-weight: 700;
   }
   .pub-card h4 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
     font-size: 18px;
     margin: 9px 0 12px;
     line-height: 1.4;
@@ -471,17 +480,17 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 5px;
-    background: var(--grad);
+    background: var(--accent-gold);
   }
   .celebrate .eyebrow { font-size:12px; letter-spacing:1.5px; text-transform:uppercase; font-weight:800; color:var(--ink-soft); margin-bottom:10px; }
-  .celebrate h2 { font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-size:34px; margin:0 0 12px; letter-spacing:-0.4px; font-weight:600; color:var(--ink); line-height:1.15; }
+  .celebrate h2 { font-family:var(--font-display); font-size:34px; margin:0 0 12px; letter-spacing:-0.4px; font-weight:600; color:var(--ink); line-height:1.15; }
   .celebrate p { margin:0; font-size:16.5px; color:var(--ink-soft); max-width:840px; line-height:1.55; }
   .celebrate p em { font-style: italic; }
   .stat-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:26px; border:1px solid rgba(255,255,255,.6); border-radius:var(--radius); overflow:hidden; }
   @media (max-width:700px){ .stat-strip{ grid-template-columns:repeat(2,1fr);} }
   .stat-strip .stat { padding:18px 20px; text-align:left; border-right:1px solid rgba(255,255,255,.6); background:rgba(255,255,255,.66); }
   .stat-strip .stat:last-child { border-right:none; }
-  .stat-strip .num { font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-size:34px; font-weight:700; letter-spacing:-0.5px; color:var(--ink); line-height:1; font-variant-numeric:tabular-nums; }
+  .stat-strip .num { font-family:var(--font-body); font-size:34px; font-weight:700; letter-spacing:-0.5px; color:var(--ink); line-height:1; font-variant-numeric:tabular-nums; }
   .stat-strip .lbl { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:8px; }
 
   /* ====== FOOTER ====== */
@@ -497,7 +506,7 @@
     position: absolute;
     top: -2px; left: 0;
     width: 140px; height: 4px;
-    background: var(--grad);
+    display: none;
     border-radius: 4px;
   }
   footer .f-top {
@@ -509,7 +518,7 @@
     margin-bottom: 18px;
   }
   footer .f-title {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
     font-size: 26px;
     font-weight: 600;
     color: var(--ink);
@@ -517,7 +526,7 @@
     line-height: 1;
   }
   footer .f-title em {
-    font-style: italic;
+    font-style: normal;
     font-weight: 700;
     display: inline-block;
     padding-right: 0.1em;
@@ -568,6 +577,114 @@
   }
   footer .f-bot a, footer .f-bot .mono { color: var(--ink); font-weight: 600; }
 
+  /* ====== DESIGN POLISH — editorial display type + interactions ====== */
+  :root { --font-display: "Newsreader", Georgia, "Times New Roman", serif; }
+
+  /* Promote display headings to an editorial serif (body stays sans) */
+  .masthead .left h1,
+  .section-head h2,
+  .celebrate h2,
+  .hero-card .h-body h3,
+  .pub-card h4,
+  .grant-card .g-amt,
+  .stat-strip .num,
+  footer .f-title {
+    font-family: var(--font-display);
+  }
+  /* Keep the small masthead subtitle in body sans for legibility */
+  .masthead .left h1 small { font-family: var(--font-body); }
+  /* Newsreader carries display weight well at large sizes */
+  .masthead .left h1 { font-weight: 600; letter-spacing: -0.8px; }
+  .section-head h2, .celebrate h2 { font-weight: 600; }
+
+  /* "Rise" wordmark — solid UM orange */
+  .masthead .left h1 em,
+  footer .f-title em {
+    color: var(--accent-coral);
+    padding-right: 0.22em;
+    margin-right: -0.08em;
+  }
+
+  /* "On the" muted, "Rise" with teal wave underline + rising arrow */
+  .masthead .left h1 .pre, footer .f-title .pre { color: var(--muted); font-weight: 400; }
+  .masthead .left h1 em, footer .f-title em { position: relative; }
+  .rise-wave {
+    position: absolute; left: 0; bottom: -0.16em;
+    width: 100%; height: 0.18em; overflow: visible;
+  }
+  .rise-wave path { fill: none; stroke: var(--dept-oce); stroke-width: 2.5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  .rise-arrow { color: var(--accent-coral); font-weight: 600; font-size: 0.6em; vertical-align: 0.42em; margin-left: 0.04em; }
+
+  /* Consistent hover motion for Honors + Funding cards (match hero/pub cards) */
+  .award-card, .grant-card {
+    transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s cubic-bezier(.4,0,.2,1);
+  }
+  .award-card:hover, .grant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .award-card .medal { transition: transform .3s cubic-bezier(.4,0,.2,1); }
+  .award-card:hover .medal { transform: scale(1.06) rotate(-5deg); }
+
+  /* Department-colored Honors + Funding cards */
+  .award-card.d-atm,   .grant-card.d-atm   { border-left-color: var(--dept-atm); }
+  .award-card.d-evr,   .grant-card.d-evr   { border-left-color: var(--dept-evr); }
+  .award-card.d-mbe,   .grant-card.d-mbe   { border-left-color: var(--dept-mbe); }
+  .award-card.d-mgs,   .grant-card.d-mgs   { border-left-color: var(--dept-mgs); }
+  .award-card.d-oce,   .grant-card.d-oce   { border-left-color: var(--dept-oce); }
+  .award-card.d-cimas, .grant-card.d-cimas { border-left-color: var(--dept-cimas); }
+
+  /* Medals take the department hue */
+  .award-card.d-atm  .medal { background: linear-gradient(135deg, #C7B2EA, var(--dept-atm));  box-shadow: 0 3px 10px rgba(173,142,222,.30); }
+  .award-card.d-evr  .medal { background: linear-gradient(135deg, #6FC07F, var(--dept-evr));  box-shadow: 0 3px 10px rgba(70,168,87,.30); }
+  .award-card.d-mbe  .medal { background: linear-gradient(135deg, #F09E7B, var(--dept-mbe));  box-shadow: 0 3px 10px rgba(232,121,78,.30); }
+  .award-card.d-mgs  .medal { background: linear-gradient(135deg, #C99E5F, var(--dept-mgs));  box-shadow: 0 3px 10px rgba(174,124,56,.30); }
+  .award-card.d-oce  .medal { background: linear-gradient(135deg, #6FB8CC, var(--dept-oce));  box-shadow: 0 3px 10px rgba(46,148,176,.30); }
+  .award-card.d-cimas .medal{ background: linear-gradient(135deg, #A2ADB7, var(--dept-cimas)); box-shadow: 0 3px 10px rgba(126,139,151,.30); }
+
+  /* Grant dollar amounts take the department hue */
+  .grant-card.d-atm  .g-amt { color: var(--dept-atm); }
+  .grant-card.d-evr  .g-amt { color: var(--dept-evr); }
+  .grant-card.d-mbe  .g-amt { color: var(--dept-mbe); }
+  .grant-card.d-mgs  .g-amt { color: var(--dept-mgs); }
+  .grant-card.d-oce  .g-amt { color: var(--dept-oce); }
+  .grant-card.d-cimas .g-amt{ color: var(--dept-cimas); }
+
+  /* Highlights header bars — softer, more transparent dept wash */
+  .hero-card.h-atm   .h-band { background: rgba(173,142,222,.14); }
+  .hero-card.h-evr   .h-band { background: rgba(70,168,87,.14); }
+  .hero-card.h-mbe   .h-band { background: rgba(232,121,78,.14); }
+  .hero-card.h-mgs   .h-band { background: rgba(174,124,56,.14); }
+  .hero-card.h-oce   .h-band { background: rgba(79,135,214,.14); }
+  .hero-card.h-cimas .h-band { background: rgba(126,139,151,.14); }
+
+  /* Department-colored Publications cards */
+  .pub-card.d-atm   { border-left: 3px solid var(--dept-atm); }
+  .pub-card.d-evr   { border-left: 3px solid var(--dept-evr); }
+  .pub-card.d-mbe   { border-left: 3px solid var(--dept-mbe); }
+  .pub-card.d-mgs   { border-left: 3px solid var(--dept-mgs); }
+  .pub-card.d-oce   { border-left: 3px solid var(--dept-oce); }
+  .pub-card.d-cimas { border-left: 3px solid var(--dept-cimas); }
+
+  .pub-card.d-atm  .journal { color: var(--dept-atm); }
+  .pub-card.d-evr  .journal { color: var(--dept-evr); }
+  .pub-card.d-mbe  .journal { color: var(--dept-mbe); }
+  .pub-card.d-mgs  .journal { color: var(--dept-mgs); }
+  .pub-card.d-oce  .journal { color: var(--dept-oce); }
+  .pub-card.d-cimas .journal{ color: var(--dept-cimas); }
+
+  .pub-card.d-atm  .badge { background: var(--dept-atm); }
+  .pub-card.d-evr  .badge { background: var(--dept-evr); }
+  .pub-card.d-mbe  .badge { background: var(--dept-mbe); }
+  .pub-card.d-mgs  .badge { background: var(--dept-mgs); }
+  .pub-card.d-oce  .badge { background: var(--dept-oce); }
+  .pub-card.d-cimas .badge{ background: var(--dept-cimas); }
+
+  /* Slightly deeper, warmer hover shadow */
+  .hero-card:hover, .pub-card:hover, .award-card:hover, .grant-card:hover {
+    box-shadow: 0 14px 34px rgba(20,35,59,.13), 0 4px 10px rgba(20,35,59,.06);
+  }
+
   /* ====== PRINT / PDF (A4 portrait newsletter) ====== */
   @page { size: A4 portrait; margin: 12mm 12mm 14mm; }
   @media print {
@@ -589,12 +706,13 @@
       -webkit-text-fill-color: var(--accent-coral);
       color: var(--accent-coral);
     }
-    /* Banner: stack so text doesn't run under the email */
-    .submit-cta { margin: 16px 0 0; padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    /* Banner: keep on one line like the website (text left, email right) */
+    .submit-cta { margin: 16px 0 0; padding: 12px 16px; flex-wrap: nowrap; }
     .submit-cta .cta-text { max-width: none; }
 
     /* Grids tuned for A4 width (~186mm usable) */
-    .ribbon { display: grid; grid-template-columns: repeat(3, 1fr); }
+    /* Department ribbon: all six on one row, matching the website */
+    .ribbon { display: grid; grid-template-columns: repeat(6, 1fr); }
     .ribbon .seg { display: block; min-width: 0; border-right: 1px solid var(--rule); }
     .ribbon .seg .name, .ribbon .seg .code { display: block; }
     .ribbon .seg .code { margin-top: 3px; }
@@ -624,7 +742,7 @@
     <div class="left">
       <div class="school">Rosenstiel School of Marine, Atmospheric, and Earth Science · University of Miami</div>
       <div class="title-row">
-        <h1 class="serif">On the <em>Rise</em><small>Celebrating achievements across the Rosenstiel research community</small></h1>
+        <h1 class="serif"><span class="pre">On the</span> <em>Rise<svg class="rise-wave" viewBox="0 0 90 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 Q 12 1, 23 6 T 45 6 T 67 6 T 88 6"/></svg></em><span class="rise-arrow" aria-hidden="true">↗</span><small>Celebrating achievements across the Rosenstiel research community</small></h1>
       </div>
     </div>
     <div class="right">
@@ -633,7 +751,7 @@
   </header>
 
   <div class="submit-cta">
-    <div class="cta-text"><strong>Have a win to share?</strong> Publications, grants, awards, honors, presentations, outreach activities, media coverage, and other accomplishments can be submitted to</div>
+    <div class="cta-text"><strong>Have a win to share?</strong> Publications, grants, honors, presentations, fieldwork, outreach activities, media coverage, and other accomplishments can be submitted to</div>
     <a class="cta-email" href="mailto:wins@earth.miami.edu">wins@earth.miami.edu</a>
   </div>
 
@@ -663,7 +781,7 @@
 
   <!-- ============== HERO HIGHLIGHTS ============== -->
   <section>
-    <div class="section-head">
+    <div class="section-head sh-hl">
       <h2 class="serif">Highlights</h2>
       <span class="tag">One standout per discipline</span>
     </div>
@@ -705,66 +823,66 @@
 
   <!-- ============== HONORS ============== -->
   <section>
-    <div class="section-head">
+    <div class="section-head sh-hon">
       <h2 class="serif">Honors</h2>
       <span class="tag">Awards &amp; fellowships</span>
     </div>
     <div class="grid g-2">
-      <div class="award-card"><div class="medal">★</div><div><div class="who">Prof. Lucia Ramirez <span class="pill mgs">MGS</span></div><div class="what">Elected <strong>AGU Fellow</strong> for contributions to mantle imaging and mentorship.</div></div></div>
-      <div class="award-card"><div class="medal">★</div><div><div class="who">Prof. Daniela Marchetti <span class="pill atm">ATM</span></div><div class="what">Elected <strong>AMS Fellow</strong> for advances in tropical cyclone prediction.</div></div></div>
-      <div class="award-card"><div class="medal">★</div><div><div class="who">Prof. Maya Delgado <span class="pill mbe">MBE</span></div><div class="what"><strong>ASLO Yentsch–Schindler Early Career Award</strong> for coral assisted-evolution.</div></div></div>
-      <div class="award-card"><div class="medal">★</div><div><div class="who">Marisol Cortez (PhD) <span class="pill evr">EVR</span></div><div class="what"><strong>NOAA Knauss Marine Policy Fellowship</strong> for the 2027 cohort.</div></div></div>
+      <div class="award-card d-mgs"><div class="medal">★</div><div><div class="who">Prof. Lucia Ramirez <span class="pill mgs">MGS</span></div><div class="what">Elected <strong>AGU Fellow</strong> for contributions to mantle imaging and mentorship.</div></div></div>
+      <div class="award-card d-atm"><div class="medal">★</div><div><div class="who">Prof. Daniela Marchetti <span class="pill atm">ATM</span></div><div class="what">Elected <strong>AMS Fellow</strong> for advances in tropical cyclone prediction.</div></div></div>
+      <div class="award-card d-mbe"><div class="medal">★</div><div><div class="who">Prof. Maya Delgado <span class="pill mbe">MBE</span></div><div class="what"><strong>ASLO Yentsch–Schindler Early Career Award</strong> for coral assisted-evolution.</div></div></div>
+      <div class="award-card d-evr"><div class="medal">★</div><div><div class="who">Marisol Cortez (PhD) <span class="pill evr">EVR</span></div><div class="what"><strong>NOAA Knauss Marine Policy Fellowship</strong> for the 2027 cohort.</div></div></div>
     </div>
   </section>
 
   <!-- ============== GRANTS ============== -->
   <section>
-    <div class="section-head">
+    <div class="section-head sh-fun">
       <h2 class="serif">Funding</h2>
       <span class="tag">$4.15M across the top awards</span>
     </div>
     <div class="grid g-3">
-      <article class="grant-card">
+      <article class="grant-card d-atm">
         <div class="g-top"><span class="agency">NOAA JTTI</span><span class="g-term">3 yr</span></div>
         <div class="g-amt">$1.18M</div>
         <p class="g-project">SHIPS-ML+: operational ML for hurricane rapid intensification</p>
-        <div class="g-pi"><strong>S. Bhatt</strong>, L. Morán</div>
+        <div class="g-pi"><strong>S. Bhatt</strong>, L. Morán <span class="pill atm">ATM</span></div>
       </article>
-      <article class="grant-card">
+      <article class="grant-card d-mbe">
         <div class="g-top"><span class="agency">NOAA RESTORE</span><span class="g-term">4 yr</span></div>
         <div class="g-amt">$925K</div>
         <p class="g-project">Climate-resilient coral genotypes for Florida Keys restoration</p>
-        <div class="g-pi"><strong>M. Delgado</strong></div>
+        <div class="g-pi"><strong>M. Delgado</strong> <span class="pill mbe">MBE</span></div>
       </article>
-      <article class="grant-card">
+      <article class="grant-card d-mgs">
         <div class="g-top"><span class="agency">NSF EAR</span><span class="g-term">5 yr</span></div>
         <div class="g-amt">$785K</div>
         <p class="g-project">CAREER: Imaging slow-slip in Cascadia with dense arrays</p>
-        <div class="g-pi"><strong>A. Okonkwo</strong></div>
+        <div class="g-pi"><strong>A. Okonkwo</strong> <span class="pill mgs">MGS</span></div>
       </article>
     </div>
   </section>
 
   <!-- ============== PUBLICATIONS ============== -->
   <section>
-    <div class="section-head">
+    <div class="section-head sh-pub">
       <h2 class="serif">Publications</h2>
       <span class="tag">3 of 21 papers this month</span>
     </div>
     <div class="grid g-3">
-      <div class="pub-card">
+      <div class="pub-card d-mbe">
         <div class="journal">Nature <span class="badge">Cover</span></div>
         <h4>Heat-tolerant coral genotypes survive successive bleaching events in the Florida Keys <span class="pill mbe">MBE</span></h4>
         <div class="authors">Delgado M, Okafor J, Singh R, &amp; the Coral Resilience Lab</div>
         <div class="doi">doi: 10.1038/s41586-026-09188-2</div>
       </div>
-      <div class="pub-card">
+      <div class="pub-card d-atm">
         <div class="journal">Nature Climate Change</div>
         <h4>Machine-learned guidance reduces rapid-intensification false alarms in operational hurricane forecasting <span class="pill atm">ATM</span></h4>
         <div class="authors">Bhatt S, Morán L, &amp; collaborators at NOAA AOML / NHC</div>
         <div class="doi">doi: 10.1038/s41558-026-02114-x</div>
       </div>
-      <div class="pub-card">
+      <div class="pub-card d-oce">
         <div class="journal">Limnology &amp; Oceanography</div>
         <h4>Florida Current transport variability from the new cabled-array record (2018–2025) <span class="pill oce">OCE</span></h4>
         <div class="authors">Karpov I, Olsson H, &amp; the FC-Array team</div>
@@ -776,7 +894,7 @@
   <!-- ============== FOOTER ============== -->
   <footer>
     <div class="f-top">
-      <div class="f-title serif">On the <em>Rise</em></div>
+      <div class="f-title serif"><span class="pre">On the</span> <em>Rise<svg class="rise-wave" viewBox="0 0 90 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 Q 12 1, 23 6 T 45 6 T 67 6 T 88 6"/></svg></em><span class="rise-arrow" aria-hidden="true">↗</span></div>
       <div class="f-sub">Summer 2026</div>
     </div>
     <div class="f-depts">
