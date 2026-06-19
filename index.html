@@ -685,6 +685,13 @@
     box-shadow: 0 14px 34px rgba(20,35,59,.13), 0 4px 10px rgba(20,35,59,.06);
   }
 
+  /* ====== INLINE LINKS — subtle, same-tab (color inherits; UM orange on hover) ====== */
+  a.link { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; transition: color .15s ease, text-decoration-color .15s ease; }
+  a.link:hover { color: var(--accent-ink); text-decoration-color: var(--accent-ink); }
+  /* Large serif headlines stay clean — the underline appears on hover only */
+  .pub-card h4 a.link { text-decoration-color: transparent; }
+  .pub-card h4 a.link:hover { color: var(--accent-ink); text-decoration-color: var(--accent-ink); }
+
   /* ====== PRINT / PDF (A4 portrait newsletter) ====== */
   @page { size: A4 portrait; margin: 12mm 12mm 14mm; }
   @media print {
@@ -828,6 +835,8 @@
       <span class="tag">Awards &amp; fellowships</span>
     </div>
     <div class="grid g-2">
+      <!-- To link an honor to its announcement page, wrap the award name in an anchor, e.g.
+           <strong><a class="link" href="https://www.agu.org/...">AGU Fellow</a></strong> -->
       <div class="award-card d-mgs"><div class="medal">★</div><div><div class="who">Prof. Lucia Ramirez <span class="pill mgs">MGS</span></div><div class="what">Elected <strong>AGU Fellow</strong> for contributions to mantle imaging and mentorship.</div></div></div>
       <div class="award-card d-atm"><div class="medal">★</div><div><div class="who">Prof. Daniela Marchetti <span class="pill atm">ATM</span></div><div class="what">Elected <strong>AMS Fellow</strong> for advances in tropical cyclone prediction.</div></div></div>
       <div class="award-card d-mbe"><div class="medal">★</div><div><div class="who">Prof. Maya Delgado <span class="pill mbe">MBE</span></div><div class="what"><strong>ASLO Yentsch–Schindler Early Career Award</strong> for coral assisted-evolution.</div></div></div>
@@ -872,21 +881,21 @@
     <div class="grid g-3">
       <div class="pub-card d-mbe">
         <div class="journal">Nature <span class="badge">Cover</span></div>
-        <h4>Heat-tolerant coral genotypes survive successive bleaching events in the Florida Keys <span class="pill mbe">MBE</span></h4>
+        <h4><a class="link" href="https://doi.org/10.1038/s41586-026-09188-2">Heat-tolerant coral genotypes survive successive bleaching events in the Florida Keys</a> <span class="pill mbe">MBE</span></h4>
         <div class="authors">Delgado M, Okafor J, Singh R, &amp; the Coral Resilience Lab</div>
-        <div class="doi">doi: 10.1038/s41586-026-09188-2</div>
+        <div class="doi"><a class="link" href="https://doi.org/10.1038/s41586-026-09188-2">doi: 10.1038/s41586-026-09188-2</a></div>
       </div>
       <div class="pub-card d-atm">
         <div class="journal">Nature Climate Change</div>
-        <h4>Machine-learned guidance reduces rapid-intensification false alarms in operational hurricane forecasting <span class="pill atm">ATM</span></h4>
+        <h4><a class="link" href="https://doi.org/10.1038/s41558-026-02114-x">Machine-learned guidance reduces rapid-intensification false alarms in operational hurricane forecasting</a> <span class="pill atm">ATM</span></h4>
         <div class="authors">Bhatt S, Morán L, &amp; collaborators at NOAA AOML / NHC</div>
-        <div class="doi">doi: 10.1038/s41558-026-02114-x</div>
+        <div class="doi"><a class="link" href="https://doi.org/10.1038/s41558-026-02114-x">doi: 10.1038/s41558-026-02114-x</a></div>
       </div>
       <div class="pub-card d-oce">
         <div class="journal">Limnology &amp; Oceanography</div>
-        <h4>Florida Current transport variability from the new cabled-array record (2018–2025) <span class="pill oce">OCE</span></h4>
+        <h4><a class="link" href="https://doi.org/10.1002/lno.12388">Florida Current transport variability from the new cabled-array record (2018–2025)</a> <span class="pill oce">OCE</span></h4>
         <div class="authors">Karpov I, Olsson H, &amp; the FC-Array team</div>
-        <div class="doi">doi: 10.1002/lno.12388</div>
+        <div class="doi"><a class="link" href="https://doi.org/10.1002/lno.12388">doi: 10.1002/lno.12388</a></div>
       </div>
     </div>
   </section>
