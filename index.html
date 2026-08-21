@@ -461,6 +461,9 @@
   }
   .pub-card .authors { color: var(--ink-soft); font-size: 14px; font-weight: 500; }
   .pub-card .doi { color: var(--muted); font-size: 12px; margin-top: 10px; font-family: "SFMono-Regular", Menlo, monospace; }
+  /* Publication date — muted, beside the journal name (papers run newest first) */
+  .pub-card .journal .sep { color: var(--rule); margin: 0 6px; }
+  .pub-card .journal .pubdate { color: var(--muted); font-weight: 600; }
   .pub-card .badge {
     display: inline-block;
     margin-left: 6px;
@@ -784,7 +787,7 @@
     <div class="celebrate">
       <div class="eyebrow">Summer 2026 in review</div>
       <h2 class="serif">Honors near and far — and a strong summer at NSF</h2>
-      <p>A lifetime achievement award in aquaculture, a national award for hurricane research, a seat on the United Nations' World Ocean Assessment expert pool, the University's nominee for the <em>Frontiers Planet Prize</em>, two climate-adaptation papers in <em>Climatic Change</em> and <em>WIREs Climate Change</em> — and six new NSF awards totaling $9.10M, among them a five-year renewal of the RAPID-MOCHA array and a CAREER award for hurricane air–sea physics.</p>
+      <p>A lifetime achievement award in aquaculture, a national award for hurricane research, a seat on the United Nations' World Ocean Assessment expert pool, the University's nominee for the <em>Frontiers Planet Prize</em>, two climate papers in <em>Climatic Change</em> and <em>WIREs Climate Change</em> — and six new NSF awards totaling $9.10M, among them a five-year renewal of the RAPID-MOCHA array and a CAREER award for hurricane air–sea physics.</p>
       <div class="stat-strip">
         <div class="stat"><div class="num">12</div><div class="lbl">Wins celebrated</div></div>
         <div class="stat"><div class="num">$9.10M</div><div class="lbl">New funding</div></div>
@@ -889,15 +892,16 @@
       <h2 class="serif">Publications</h2>
       <span class="tag">Recently published</span>
     </div>
+    <!-- ordered by publication date, newest first (online-first date) -->
     <div class="grid g-2">
       <div class="pub-card d-atm">
-        <div class="journal">Climatic Change</div>
+        <div class="journal">Climatic Change<span class="sep">·</span><span class="pubdate">Jul 30, 2026</span></div>
         <h4><a class="link" href="https://doi.org/10.1007/s10584-026-04254-w">Global metrics quantify shifts in chronic heat</a> <span class="pill atm">ATM</span> <span class="pill evr">EVR</span></h4>
         <div class="authors">Fanning A, Mach KJ, Cruz M &amp; Clement AC — from Ashley Fanning's UM undergraduate thesis, advised by Amy Clement</div>
         <div class="doi"><a class="link" href="https://doi.org/10.1007/s10584-026-04254-w">doi: 10.1007/s10584-026-04254-w</a></div>
       </div>
       <div class="pub-card d-evr">
-        <div class="journal">WIREs Climate Change <span class="badge">Open access</span></div>
+        <div class="journal">WIREs Climate Change<span class="sep">·</span><span class="pubdate">Jul 24, 2026</span> <span class="badge">Open access</span></div>
         <h4><a class="link" href="https://doi.org/10.1002/wcc.70084">Scenario Planning for Transformative Climate Adaptation</a> <span class="pill evr">EVR</span></h4>
         <div class="authors">Mach KJ, Siders AR, Hino M, et al. — with UM co-authors Agopian A, Larson Mohr K, Niemann-Morris J &amp; Tavarez I</div>
         <div class="doi"><a class="link" href="https://doi.org/10.1002/wcc.70084">doi: 10.1002/wcc.70084</a></div>
